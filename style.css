@@ -279,18 +279,28 @@ section {
 .countdown-timer {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 2rem);
+    flex-wrap: nowrap;
     margin-top: var(--spacing-md);
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .countdown-box {
     background: var(--white);
     border: 3px solid var(--primary);
     border-radius: 16px;
-    padding: var(--spacing-md);
-    min-width: 120px;
-    text-align: center;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(80px, 15vw, 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
 }
@@ -303,19 +313,19 @@ section {
 
 .countdown-number {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 700;
     color: var(--primary);
     line-height: 1;
-    margin-bottom: var(--spacing-xs);
 }
 
 .countdown-label {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     font-weight: 600;
     color: var(--gray);
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 /* ===================================
@@ -884,10 +894,10 @@ section {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
-        max-width: 300px;
+        width: 75%;
+        max-width: 320px;
         height: 100vh;
-        background: var(--white);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
         box-shadow: var(--shadow-lg);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
@@ -902,13 +912,22 @@ section {
 
     .nav-menu li {
         width: 100%;
-        border-bottom: 1px solid var(--gray-light);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .nav-link {
         display: block;
-        padding: 1rem 0;
+        padding: 1.25rem 0;
         font-size: 1.1rem;
+        color: var(--white);
+    }
+
+    .nav-link.active {
+        color: var(--secondary);
+    }
+
+    .nav-link:hover {
+        color: var(--secondary);
     }
 
     .nav-link::after {
