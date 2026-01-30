@@ -8,7 +8,7 @@
     <meta property="og:description" content="Vous êtes cordialement invité à notre mariage">
     <meta property="og:type" content="website">
     
-    <title>Gaël & Joël - 25 Avril 2026</title>
+    <title>Gaëlle & Joël - 25 Avril 2026</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">G <span class="logo-ampersand">&</span> J</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#programme" class="nav-link">Programme</a></li>
+                <li><a href="#localisation" class="nav-link">Localisation</a></li>
+                <li><a href="#table-section" class="nav-link nav-link-table">Ma Table</a></li>
+                <li><a href="#tenue" class="nav-link">Tenue</a></li>
+                <li><a href="#reservation" class="nav-link">Réservation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+        <span>↑</span>
+    </button>
+
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content" data-aos="fade-up">
             <p class="invitation-text">Vous êtes cordialement invité(e)</p>
-            <h1 class="couple-names">Gaël <span class="ampersand">&</span> Joël</h1>
+            <h1 class="couple-names">Gaëlle <span class="ampersand">&</span> Joël</h1>
             <p class="wedding-date">25 Avril 2026</p>
             <div class="welcome-message">
                 <p id="personal-greeting">Bienvenue</p>
@@ -99,6 +121,48 @@
         </div>
     </section>
 
+    <!-- Localisation Section -->
+    <section class="localisation" id="localisation">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Localisation</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Retrouvez-nous aux adresses suivantes</p>
+            
+            <div class="location-grid">
+                <!-- Civil Location -->
+                <div class="location-card location-civil" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="location-icon">📍</div>
+                    <h3>Cérémonie Civile</h3>
+                    <p class="location-address">Mairie du 15ème Arrondissement<br>31 Rue Péclet<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                </div>
+
+                <!-- Salle Royaume Location -->
+                <div class="location-card location-salle-royaume" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="location-icon">🙏</div>
+                    <h3>Cérémonie Religieuse</h3>
+                    <p class="location-address">Salle du Royaume<br>123 Avenue de France<br>75013 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                </div>
+
+                <!-- VH Location -->
+                <div class="location-card location-vh" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="location-icon">🥂</div>
+                    <h3>Vin d'Honneur</h3>
+                    <p class="location-address">Jardin de la Résidence<br>456 Rue du Parc<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                </div>
+
+                <!-- Diner Location -->
+                <div class="location-card location-diner" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="location-icon">🍽️</div>
+                    <h3>Dîner de Gala</h3>
+                    <p class="location-address">Domaine des Érables<br>123 Avenue de la Liberté<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Table Assignment Section -->
     <section class="table-section" id="table-section" style="display: none;">
         <div class="container">
@@ -112,42 +176,44 @@
         </div>
     </section>
 
-    <!-- Infos Pratiques Section -->
-    <section class="infos-pratiques" id="infos">
+    <!-- Tenue / Theme Section -->
+    <section class="tenue" id="tenue">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Infos Pratiques</h2>
+            <h2 class="section-title" data-aos="fade-up">Tenue & Thème</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Tenue de soirée élégante<br>Couleurs du mariage</p>
             
-            <div class="info-grid">
-                <!-- Accès -->
-                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="info-icon">📍</div>
-                    <h3>Accès</h3>
-                    <p>Domaine des Érables<br>123 Avenue de la Liberté<br>75015 Paris</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-link">Voir sur Google Maps</a>
-                </div>
+            <div class="theme-colors" data-aos="zoom-in" data-aos-delay="100">
+                <div class="color-circle" style="background-color: #3854b7;" title="Bleu Royal"></div>
+                <div class="color-circle" style="background-color: #5d78d3;" title="Bleu Clair"></div>
+                <div class="color-circle" style="background-color: #99ceff;" title="Bleu Ciel"></div>
+                <div class="color-circle" style="background-color: #feb28e;" title="Pêche"></div>
+                <div class="color-circle" style="background-color: #ffd5c5;" title="Pêche Clair"></div>
+            </div>
+            
+            <p class="theme-description" data-aos="fade-up" data-aos-delay="150">
+                Nous vous invitons à porter une tenue élégante dans les tons de bleu et pêche pour harmoniser avec notre thème
+            </p>
+        </div>
+    </section>
 
-                <!-- Hébergement -->
-                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="info-icon">🏨</div>
-                    <h3>Hébergement</h3>
-                    <p>Hôtel Le Grand Paris<br>456 Rue du Commerce<br>75015 Paris</p>
-                    <p class="hotel-note">Tarif préférentiel avec le code: <strong>GAELJOEL2026</strong></p>
-                </div>
-
-                <!-- RSVP -->
-                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="info-icon">✉️</div>
-                    <h3>Confirmation</h3>
-                    <p>Merci de confirmer votre présence avant le 1er Mars 2026</p>
+    <!-- Reservation / RSVP Section -->
+    <section class="reservation" id="reservation">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Réservation</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Merci de confirmer votre présence</p>
+            
+            <div class="reservation-content" data-aos="zoom-in" data-aos-delay="100">
+                <div class="reservation-card">
+                    <div class="reservation-icon">✉️</div>
+                    <h3>Confirmation de présence</h3>
+                    <p>Merci de nous confirmer votre participation avant le <strong>1er Mars 2026</strong></p>
                     <a href="https://forms.google.com" target="_blank" class="btn-primary">Confirmer ma présence</a>
-                </div>
-
-                <!-- Dress Code -->
-                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="info-icon">👔</div>
-                    <h3>Tenue</h3>
-                    <p>Tenue de soirée élégante</p>
-                    <p class="dress-note">Couleurs de la cérémonie : bleu royal et pêche</p>
+                    
+                    <div class="reservation-info">
+                        <h4>Informations pratiques</h4>
+                        <p><strong>Hébergement :</strong> Hôtel Le Grand Paris<br>456 Rue du Commerce, 75015 Paris</p>
+                        <p class="hotel-note">Code promo : <strong>GAELJOEL2026</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,9 +222,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text" data-aos="fade-up">Avec tout notre amour</p>
-            <p class="footer-names" data-aos="fade-up" data-aos-delay="100">Gaël & Joël</p>
-            <p class="footer-date" data-aos="fade-up" data-aos-delay="200">25 Avril 2026</p>
+            <p class="footer-text">Avec tout notre amour</p>
+            <p class="footer-names">Gaëlle & Joël</p>
+            <p class="footer-date">25 Avril 2026</p>
         </div>
     </footer>
 

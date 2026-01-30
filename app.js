@@ -2,8 +2,8 @@
 // Wedding Website - Dynamic Content
 // ===================================
 
-// Initialize AOS (Animate On Scroll)
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize AOS (Animate On Scroll) and all features
+document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load guest data and personalize content
     loadGuestData();
+
+    // Initialize navigation features
+    initializeNavigation();
+
+    // Initialize scroll-to-top button
+    initializeScrollToTop();
 });
 
 /**
@@ -34,6 +40,7 @@ async function loadGuestData() {
             const guestData = invitatesData[guestId];
             personalizeContent(guestData);
             filterProgramSections(guestData.groupes);
+            filterLocationSections(guestData.groupes);
             displayTableAssignment(guestData.table);
         } else {
             // Public/fallback version for invalid or missing ID
@@ -52,12 +59,12 @@ async function loadGuestData() {
  */
 function personalizeContent(guestData) {
     const greetingElement = document.getElementById('personal-greeting');
-    
+
     if (greetingElement) {
         // Create personalized greeting
         const greeting = `Bonjour ${guestData.prenom} ${guestData.nom}`;
         greetingElement.textContent = greeting;
-        
+
         // Add a subtle animation
         greetingElement.style.animation = 'fadeInUp 0.8s ease-out';
     }
@@ -70,11 +77,11 @@ function personalizeContent(guestData) {
 function filterProgramSections(allowedGroups) {
     // All possible section types
     const allSections = ['civil', 'salle-royaume', 'vh', 'diner'];
-    
+
     // Loop through all sections
     allSections.forEach(sectionType => {
         const sectionElement = document.querySelector(`.section-${sectionType}`);
-        
+
         if (sectionElement) {
             if (!allowedGroups.includes(sectionType)) {
                 // Hide sections not in guest's groups
@@ -88,49 +95,199 @@ function filterProgramSections(allowedGroups) {
 }
 
 /**
+ * Filter location cards based on guest's allowed groups
+ * @param {Array} allowedGroups - Array of group names the guest can access
+ */
+function filterLocationSections(allowedGroups) {
+    // All possible location types
+    const allLocations = ['civil', 'salle-royaume', 'vh', 'diner'];
+
+    // Loop through all location cards
+    allLocations.forEach(locationType => {
+        const locationElement = document.querySelector(`.location-${locationType}`);
+
+        if (locationElement) {
+            if (!allowedGroups.includes(locationType)) {
+                // Hide location cards not in guest's groups
+                locationElement.style.display = 'none';
+            } else {
+                // Ensure visible location cards are displayed
+                locationElement.style.display = 'block';
+            }
+        }
+    });
+}
+
+/**
  * Display table assignment for the guest
  * @param {string} tableName - Name/number of the assigned table
  */
 function displayTableAssignment(tableName) {
     const tableSection = document.getElementById('table-section');
     const tableAssignmentElement = document.getElementById('table-assignment');
-    
+    const tableLinkNav = document.querySelector('.nav-link-table');
+
     if (tableSection && tableAssignmentElement && tableName) {
         // Show table section
         tableSection.style.display = 'block';
-        
+
         // Display table name
         tableAssignmentElement.textContent = tableName;
+
+        // Show table navigation link
+        if (tableLinkNav) {
+            tableLinkNav.parentElement.style.display = 'list-item';
+        }
+    } else {
+        // Hide table navigation link if no table
+        if (tableLinkNav) {
+            tableLinkNav.parentElement.style.display = 'none';
+        }
     }
 }
 
 /**
  * Display public/fallback version of the website
- * Shows minimal information without personalization
+ * Shows ONLY civil and religieux (salle-royaume) ceremonies
  */
 function displayPublicVersion() {
     const greetingElement = document.getElementById('personal-greeting');
     const tableSection = document.getElementById('table-section');
-    
+    const tableLinkNav = document.querySelector('.nav-link-table');
+
     // Set generic greeting
     if (greetingElement) {
         greetingElement.textContent = 'Bienvenue à notre mariage';
     }
-    
+
     // Hide table section
     if (tableSection) {
         tableSection.style.display = 'none';
     }
-    
-    // Hide all specific program sections to show only basic info
-    // In public version, we can choose to show all or none
-    // For this case, let's show all sections but without personalization
+
+    // Hide table navigation link
+    if (tableLinkNav) {
+        tableLinkNav.parentElement.style.display = 'none';
+    }
+
+    // ONLY show civil and salle-royaume (hide vh and diner)
+    const publicSections = ['civil', 'salle-royaume']; // Only these two
     const allSections = ['civil', 'salle-royaume', 'vh', 'diner'];
+
     allSections.forEach(sectionType => {
         const sectionElement = document.querySelector(`.section-${sectionType}`);
-        if (sectionElement) {
-            sectionElement.style.display = 'flex';
+        const locationElement = document.querySelector(`.location-${sectionType}`);
+
+        if (publicSections.includes(sectionType)) {
+            // Show civil and salle-royaume
+            if (sectionElement) sectionElement.style.display = 'flex';
+            if (locationElement) locationElement.style.display = 'block';
+        } else {
+            // Hide vh and diner
+            if (sectionElement) sectionElement.style.display = 'none';
+            if (locationElement) locationElement.style.display = 'none';
         }
+    });
+}
+
+// ===================================
+// Navigation Features
+// ===================================
+
+/**
+ * Initialize navigation scroll tracking and active state
+ */
+function initializeNavigation() {
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Track scroll for navbar shadow
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Update active nav link based on scroll position
+        updateActiveNavLink();
+    });
+
+    // Smooth scroll with offset for fixed navbar
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const navbarHeight = navbar.offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+/**
+ * Update active navigation link based on current scroll position
+ */
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.getElementById('navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+    let currentSection = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - navbarHeight - 100;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// ===================================
+// Scroll to Top Button
+// ===================================
+
+/**
+ * Initialize scroll-to-top button functionality
+ */
+function initializeScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (!scrollToTopBtn) return;
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }
 
@@ -154,27 +311,11 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Smooth scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
 // Add parallax effect to hero section
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-content');
-    
+
     if (hero && scrolled < window.innerHeight) {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         hero.style.opacity = 1 - (scrolled / window.innerHeight);

@@ -9,30 +9,30 @@
     --primary-lighter: #99ceff;
     --secondary: #feb28e;
     --secondary-light: #ffd5c5;
-    
+
     /* Couleurs neutres */
     --white: #ffffff;
     --light-bg: #fafbfc;
     --dark: #1a1a2e;
     --gray: #6b7280;
     --gray-light: #e5e7eb;
-    
+
     /* Typographie */
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
-    
+
     /* Espacements */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
-    
+
     /* Ombres */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -62,7 +62,12 @@ body {
    Typography
    =================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.2;
@@ -99,6 +104,135 @@ section {
 }
 
 /* ===================================
+   Fixed Navigation Bar
+   =================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: all var(--transition-normal);
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.logo-text {
+    letter-spacing: 2px;
+}
+
+.logo-ampersand {
+    font-style: italic;
+    color: var(--secondary);
+    margin: 0 0.3em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+}
+
+/* ===================================
+   Scroll to Top Button
+   =================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* ===================================
    Hero Section
    =================================== */
 
@@ -119,7 +253,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(254, 178, 142, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(153, 206, 255, 0.15) 0%, transparent 50%);
     pointer-events: none;
@@ -197,12 +331,19 @@ section {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateX(-50%) translateY(0);
     }
+
     40% {
         transform: translateX(-50%) translateY(-10px);
     }
+
     60% {
         transform: translateX(-50%) translateY(-5px);
     }
@@ -333,6 +474,186 @@ section {
 }
 
 /* ===================================
+   Localisation Section
+   =================================== */
+
+.localisation {
+    background-color: var(--white);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.location-card {
+    background: linear-gradient(135deg, var(--light-bg), var(--white));
+    padding: var(--spacing-md);
+    border-radius: 16px;
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 2px solid var(--gray-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.location-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.location-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.location-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.location-address {
+    color: var(--gray);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.btn-map {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 0.6rem 1.25rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.btn-map:hover {
+    box-shadow: var(--shadow-md);
+    transform: scale(1.05);
+}
+
+/* ===================================
+   Tenue & Theme Section
+   =================================== */
+
+.tenue {
+    background: linear-gradient(135deg, var(--light-bg), var(--white));
+}
+
+.theme-colors {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 4px solid var(--white);
+}
+
+.color-circle:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-description {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0 var(--spacing-md);
+}
+
+/* ===================================
+   Reservation Section
+   =================================== */
+
+.reservation {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+}
+
+.reservation .section-title,
+.reservation .section-subtitle {
+    color: var(--white);
+}
+
+.reservation-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.reservation-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.reservation-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.reservation-card h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.reservation-card p {
+    color: var(--gray);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.reservation-info {
+    background: var(--light-bg);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    margin-top: var(--spacing-lg);
+}
+
+.reservation-info h4 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.reservation-info p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.reservation-info .hotel-note {
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: var(--spacing-sm);
+}
+
+.reservation-info .hotel-note strong {
+    color: var(--primary);
+    font-style: normal;
+}
+
+/* ===================================
    Infos Pratiques Section
    =================================== */
 
@@ -379,7 +700,8 @@ section {
     line-height: 1.6;
 }
 
-.hotel-note, .dress-note {
+.hotel-note,
+.dress-note {
     font-size: 0.9rem;
     font-style: italic;
     margin-top: var(--spacing-sm);
@@ -391,7 +713,8 @@ section {
 }
 
 /* Buttons */
-.btn-link, .btn-primary {
+.btn-link,
+.btn-primary {
     display: inline-block;
     margin-top: var(--spacing-sm);
     padding: 0.75rem 1.5rem;
@@ -465,25 +788,55 @@ section {
         --spacing-lg: 3rem;
         --spacing-xl: 4rem;
     }
-    
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+
     .timeline-item {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .timeline-icon {
         margin-right: 0;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .timeline-content:hover {
         transform: translateY(-4px);
     }
-    
-    .info-grid {
+
+    .info-grid,
+    .location-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    .theme-colors {
+        gap: var(--spacing-sm);
+    }
+
+    .color-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 45px;
+        height: 45px;
+    }
+
     section {
         padding: var(--spacing-lg) 0;
     }
@@ -493,9 +846,25 @@ section {
     .container {
         padding: 0 var(--spacing-sm);
     }
-    
-    .table-card {
+
+    .nav-menu {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .table-card,
+    .reservation-card {
         padding: var(--spacing-md);
+    }
+
+    .color-circle {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -511,9 +880,26 @@ section {
     text-align: center;
 }
 
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
+.mt-1 {
+    margin-top: var(--spacing-xs);
+}
+
+.mt-2 {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-3 {
+    margin-top: var(--spacing-md);
+}
+
+.mb-1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.mb-2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-3 {
+    margin-bottom: var(--spacing-md);
+}
