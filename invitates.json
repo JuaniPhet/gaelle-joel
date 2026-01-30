@@ -1,0 +1,32 @@
+{
+  "a1z2": {
+    "prenom": "Sophie",
+    "nom": "Martin",
+    "table": "Table 1 - Famille",
+    "groupes": ["civil", "salle-royaume", "vh"]
+  },
+  "b3x4": {
+    "prenom": "Marc",
+    "nom": "Dubois",
+    "table": "Table 3 - Amis",
+    "groupes": ["civil", "salle-royaume", "diner"]
+  },
+  "c5y6": {
+    "prenom": "Julie",
+    "nom": "Lefebvre",
+    "table": "Table 2 - Témoins",
+    "groupes": ["civil", "salle-royaume", "vh", "diner"]
+  },
+  "d7w8": {
+    "prenom": "Antoine",
+    "nom": "Rousseau",
+    "table": "Table 5 - Collègues",
+    "groupes": ["civil", "salle-royaume", "vh"]
+  },
+  "e9v0": {
+    "prenom": "Émilie",
+    "nom": "Bernard",
+    "table": "Table 4 - Famille",
+    "groupes": ["civil", "salle-royaume", "diner"]
+  }
+}

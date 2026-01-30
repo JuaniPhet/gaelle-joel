@@ -1,0 +1,10 @@
+PRIMARY COLOR : #3854b7
+
+VARIATIONS : 	#5d78d3
+		#99ceff
+
+
+
+SECONDARY COLOR : #feb28e
+
+VARIATIONS : 	#ffd5c5

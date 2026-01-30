@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vous êtes cordialement invité au mariage de Gaël et Joël - 25 Avril 2026">
+    <meta property="og:title" content="Gaël & Joël - 25 Avril 2026">
+    <meta property="og:description" content="Vous êtes cordialement invité à notre mariage">
+    <meta property="og:type" content="website">
+    
+    <title>Gaël & Joël - 25 Avril 2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <p class="invitation-text">Vous êtes cordialement invité(e)</p>
+            <h1 class="couple-names">Gaël <span class="ampersand">&</span> Joël</h1>
+            <p class="wedding-date">25 Avril 2026</p>
+            <div class="welcome-message">
+                <p id="personal-greeting">Bienvenue</p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section class="programme" id="programme">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Le Programme</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Une journée inoubliable vous attend</p>
+            
+            <div class="timeline">
+                <!-- Mairie / Civil -->
+                <div class="timeline-item section-civil" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-icon">
+                        <span>💍</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cérémonie Civile</h3>
+                        <p class="time">14h00</p>
+                        <p class="location">Mairie du 15ème Arrondissement</p>
+                        <p class="description">L'union officielle de nos vies</p>
+                    </div>
+                </div>
+
+                <!-- Salle du Royaume / Religieux -->
+                <div class="timeline-item section-salle-royaume" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-icon">
+                        <span>🙏</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cérémonie Religieuse</h3>
+                        <p class="time">16h00</p>
+                        <p class="location">Salle du Royaume</p>
+                        <p class="description">Bénédiction de notre union</p>
+                    </div>
+                </div>
+
+                <!-- Vin d'Honneur -->
+                <div class="timeline-item section-vh" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-icon">
+                        <span>🥂</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Vin d'Honneur</h3>
+                        <p class="time">17h30</p>
+                        <p class="location">Jardin de la Résidence</p>
+                        <p class="description">Cocktail et moments de partage</p>
+                    </div>
+                </div>
+
+                <!-- Dîner -->
+                <div class="timeline-item section-diner" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-icon">
+                        <span>🍽️</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Dîner de Gala</h3>
+                        <p class="time">20h00</p>
+                        <p class="location">Domaine des Érables</p>
+                        <p class="description">Repas et soirée dansante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Assignment Section -->
+    <section class="table-section" id="table-section" style="display: none;">
+        <div class="container">
+            <div class="table-card" data-aos="zoom-in">
+                <h2>Votre Place</h2>
+                <div class="table-info">
+                    <p>Vous êtes assigné(e) à la :</p>
+                    <p class="table-name" id="table-assignment">Table 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infos Pratiques Section -->
+    <section class="infos-pratiques" id="infos">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Infos Pratiques</h2>
+            
+            <div class="info-grid">
+                <!-- Accès -->
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-icon">📍</div>
+                    <h3>Accès</h3>
+                    <p>Domaine des Érables<br>123 Avenue de la Liberté<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-link">Voir sur Google Maps</a>
+                </div>
+
+                <!-- Hébergement -->
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-icon">🏨</div>
+                    <h3>Hébergement</h3>
+                    <p>Hôtel Le Grand Paris<br>456 Rue du Commerce<br>75015 Paris</p>
+                    <p class="hotel-note">Tarif préférentiel avec le code: <strong>GAELJOEL2026</strong></p>
+                </div>
+
+                <!-- RSVP -->
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-icon">✉️</div>
+                    <h3>Confirmation</h3>
+                    <p>Merci de confirmer votre présence avant le 1er Mars 2026</p>
+                    <a href="https://forms.google.com" target="_blank" class="btn-primary">Confirmer ma présence</a>
+                </div>
+
+                <!-- Dress Code -->
+                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="info-icon">👔</div>
+                    <h3>Tenue</h3>
+                    <p>Tenue de soirée élégante</p>
+                    <p class="dress-note">Couleurs de la cérémonie : bleu royal et pêche</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text" data-aos="fade-up">Avec tout notre amour</p>
+            <p class="footer-names" data-aos="fade-up" data-aos-delay="100">Gaël & Joël</p>
+            <p class="footer-date" data-aos="fade-up" data-aos-delay="200">25 Avril 2026</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
