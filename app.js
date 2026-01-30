@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize navigation features
     initializeNavigation();
 
+    // Initialize hamburger menu
+    initializeHamburgerMenu();
+
     // Initialize scroll-to-top button
     initializeScrollToTop();
+
+    // Initialize countdown timer
+    initializeCountdown();
 });
 
 /**
@@ -321,3 +327,91 @@ window.addEventListener('scroll', function () {
         hero.style.opacity = 1 - (scrolled / window.innerHeight);
     }
 });
+
+// ===================================
+// Hamburger Menu
+// ===================================
+
+/**
+ * Initialize hamburger menu for mobile navigation
+ */
+function initializeHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (!hamburger || !navMenu) return;
+
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking on backdrop
+    navMenu.addEventListener('click', (e) => {
+        if (e.target === navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
+// ===================================
+// Countdown Timer
+// ===================================
+
+/**
+ * Initialize countdown timer to wedding date (April 25, 2026)
+ */
+function initializeCountdown() {
+    // Wedding date: April 25, 2026 at 14:00 (2:00 PM)
+    const weddingDate = new Date('2026-04-25T14:00:00').getTime();
+
+    // Update countdown every second
+    const countdownInterval = setInterval(() => {
+        updateCountdown(weddingDate);
+    }, 1000);
+
+    // Initial update
+    updateCountdown(weddingDate);
+}
+
+/**
+ * Update countdown display
+ * @param {number} weddingDate - Target date in milliseconds
+ */
+function updateCountdown(weddingDate) {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    // If countdown is over
+    if (distance < 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+    }
+
+    // Calculate time units
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update display with leading zeros
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
