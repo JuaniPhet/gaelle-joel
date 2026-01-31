@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Vous êtes cordialement invité au mariage de Gaël et Joël - 25 Avril 2026">
     <meta property="og:title" content="Gaël & Joël - 25 Avril 2026">
     <meta property="og:description" content="Vous êtes cordialement invité à notre mariage">
@@ -69,21 +69,21 @@
         </div>
     
         <!-- Invitation Text -->
-        <div class="mb-12 text-center animate-fade-in-up">
-            <p class="text-primary tracking-[0.3em] uppercase text-sm font-sans font-semibold">Du 25 au 27 Avril 2026</p>
+        <div class="mb-8 md:mb-12 text-center animate-fade-in-up px-4">
+            <p class="text-primary tracking-[0.3em] uppercase text-xs md:text-sm font-sans font-semibold">Du 25 au 27 Avril 2026</p>
         </div>
     
         <!-- Envelope Container -->
-        <div id="envelope-container" class="relative cursor-pointer group perspective-1000" role="button" aria-label="Ouvrir l'invitation">
-            <div class="relative w-80 h-52 md:w-96 md:h-64 transition-transform duration-500 transform group-hover:scale-105 preserve-3d">
+        <div id="envelope-container" class="relative cursor-pointer group perspective-1000 mx-auto" role="button" aria-label="Ouvrir l'invitation">
+            <div class="relative w-[85vw] max-w-[20rem] h-[55vw] max-h-[13rem] md:w-96 md:h-64 transition-transform duration-500 transform group-hover:scale-105 preserve-3d mx-auto">
                 <!-- Envelope Body (Back) -->
                 <div class="absolute inset-0 bg-[#eaddcf] rounded-lg shadow-2xl"></div>
                 
                 <!-- Card Inside -->
                 <div id="invitation-card" class="absolute inset-x-4 top-4 bottom-4 bg-white rounded shadow-sm flex flex-col items-center justify-center z-10 transition-transform duration-1000 ease-in-out origin-bottom">
-                    <div class="text-center p-4">
-                        <p class="font-heading text-3xl text-primary mb-1">Gaëlle & Joël</p>
-                        <p class="text-xs tracking-widest text-gray uppercase">Un week-end d'exception</p>
+                    <div class="text-center p-2 md:p-4">
+                        <p class="font-heading text-2xl md:text-3xl text-primary mb-1">Gaëlle & Joël</p>
+                        <p class="text-[0.6rem] md:text-xs tracking-widest text-gray uppercase">Un week-end d'exception</p>
                     </div>
                 </div>
     
@@ -105,8 +105,8 @@
                 </div>
     
                 <!-- Wax Seal (Click Trigger) -->
-                <div id="wax-seal" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-16 h-16 bg-gradient-to-br from-primary to-primary-light rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:shadow-xl custom-seal-pulse">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart">
+                <div id="wax-seal" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-primary-light rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:shadow-xl custom-seal-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart md:w-7 md:h-7">
                         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
                     </svg>
                 </div>
@@ -114,8 +114,8 @@
         </div>
     
         <!-- Click Text -->
-        <div class="mt-12 text-center transition-opacity duration-500" id="click-text">
-            <p class="text-secondary font-heading text-xl italic animate-bounce">Cliquez pour ouvrir</p>
+        <div class="mt-8 md:mt-12 text-center transition-opacity duration-500" id="click-text">
+            <p class="text-secondary font-heading text-lg md:text-xl italic animate-bounce">Cliquez pour ouvrir</p>
         </div>
     </div>
 
@@ -127,7 +127,7 @@
             </div>
             
             <!-- Hamburger Menu Button -->
-            <button class="md:hidden flex flex-col justify-between w-[30px] h-[24px] bg-transparent border-none cursor-pointer p-0 z-[1001]" id="hamburger" aria-label="Menu">
+            <button class="md:hidden flex flex-col justify-between w-[30px] h-[24px] bg-transparent border-none cursor-pointer p-0 z-[2050]" id="hamburger" aria-label="Menu">
                 <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
                 <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
                 <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
@@ -319,35 +319,35 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-24 bg-gradient-to-br from-light-bg to-white" id="countdown">
-        <div class="container mx-auto px-8">
+    <section class="py-24 bg-gradient-to-br from-light-bg to-white -mb-px" id="countdown">
+        <div class="container mx-auto px-4 md:px-8 overflow-hidden">
             <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Compte à Rebours</h2>
             <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Plus que quelques instants avant notre grand jour...</p>
             
-            <div class="flex justify-center gap-4 md:gap-8 flex-nowrap mt-8" data-aos="zoom-in" data-aos-delay="100">
-                <div class="flex flex-col items-center gap-4">
-                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
-                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="days">00</div>
+            <div class="flex justify-center flex-wrap gap-3 md:gap-8 mt-8" data-aos="zoom-in" data-aos-delay="100">
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="days">00</div>
                     </div>
-                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Jours</div>
+                    <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Jours</div>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
-                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="hours">00</div>
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="hours">00</div>
                     </div>
-                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Heures</div>
+                    <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Heures</div>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
-                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="minutes">00</div>
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="minutes">00</div>
                     </div>
-                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Minutes</div>
+                    <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Minutes</div>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
-                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="seconds">00</div>
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="seconds">00</div>
                     </div>
-                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Secondes</div>
+                    <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Secondes</div>
                 </div>
             </div>
         </div>
