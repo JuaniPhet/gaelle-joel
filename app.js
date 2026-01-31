@@ -310,13 +310,16 @@ function initializeNavigation() {
                 });
 
                 // Close mobile menu if open
-                const hamburger = document.getElementById('hamburger');
+                // Close mobile menu if open - Re-use the click on hamburger logic or just manual cleanup
+                // The global event listener we added in initializeHamburgerMenu handles the class cleanup for nav-links generally,
+                // but this specific internal link handler might run before or after.
+                // Safest to just let the specific nav-link listener in initializeHamburgerMenu handle it.
+                // Or force it here if we want to be sure.
                 const navMenu = document.getElementById('nav-menu');
-                if (hamburger.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.add('hidden');
-                    // Clean up mobile menu classes
-                    navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-[60px]', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-lg');
+                if (navMenu && !navMenu.classList.contains('hidden')) {
+                    // We can just trigger the function logic but simpler to just let the other listener work
+                    // but since we are preventingDefault here, we should ensure the close logic runs.
+                    // The other listener is attached to .nav-link, so it should fire.
                 }
             }
         });
@@ -384,9 +387,11 @@ function initializeScrollToTop() {
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('visible');
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
         } else {
-            scrollToTopBtn.classList.remove('visible');
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
         }
     });
 
@@ -444,25 +449,54 @@ function initializeHamburgerMenu() {
 
     if (!hamburger || !navMenu) return;
 
+    // Mobile Menu Classes
+    const mobileClasses = [
+        'flex',
+        'flex-col',
+        'fixed',
+        'inset-0',
+        'z-[2000]',
+        'h-screen',
+        'justify-center',
+        'items-center',
+        'gap-8',
+        'bg-soft-bg/95',
+        'backdrop-blur-xl',
+        'text-2xl',
+        'font-heading'
+    ];
+
     // Toggle menu on hamburger click
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isActive = hamburger.classList.toggle('active');
+
+        if (isActive) {
+            // Open Menu
+            navMenu.classList.remove('hidden');
+            navMenu.classList.add(...mobileClasses);
+            // Animate items could be added here
+        } else {
+            // Close Menu
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove(...mobileClasses);
+        }
     });
 
     // Close menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove(...mobileClasses);
         });
     });
 
-    // Close menu when clicking on backdrop
-    navMenu.addEventListener('click', (e) => {
-        if (e.target === navMenu) {
+    // Close menu when clicking outside (if needed, though top-full covers usually mostly everything or we click elsewhere)
+    document.addEventListener('click', (e) => {
+        if (hamburger.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove(...mobileClasses);
         }
     });
 }

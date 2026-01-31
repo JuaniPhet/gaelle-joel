@@ -25,9 +25,10 @@
         .timeline-item:hover .timeline-icon { transform: scale(1.1) rotate(5deg); }
         .timeline-content { border-left: 4px solid #feb28e; }
         .timeline-content:hover { transform: translateX(8px); }
-        .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(10.5px) rotate(45deg); }
-        .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
-        .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); }
+        
+        /* Hamburger / Close Icon Animation */
+        .hamburger.active .icon-menu { opacity: 0; transform: rotate(90deg) scale(0.5); }
+        .hamburger.active .icon-close { opacity: 1; transform: rotate(0) scale(1); }
         
         /* Hero Background */
         .hero-bg {
@@ -59,9 +60,9 @@
         }
     </style>
 </head>
-<body class="font-body text-dark bg-white text-base leading-relaxed overflow-x-hidden overflow-hidden">
+<body class="font-body text-dark bg-soft-bg text-base leading-relaxed overflow-x-hidden overflow-hidden">
     <!-- Intro Overlay -->
-    <div id="intro-overlay" class="fixed inset-0 z-[2000] flex flex-col items-center justify-center bg-[#FAF7F2] transition-opacity duration-1000">
+    <div id="intro-overlay" class="fixed inset-0 z-[2000] flex flex-col items-center justify-center bg-soft-bg transition-opacity duration-1000">
         <!-- Background Effects -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-secondary/20 blur-3xl animate-pulse"></div>
@@ -127,10 +128,19 @@
             </div>
             
             <!-- Hamburger Menu Button -->
-            <button class="md:hidden flex flex-col justify-between w-[30px] h-[24px] bg-transparent border-none cursor-pointer p-0 z-[2050]" id="hamburger" aria-label="Menu">
-                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
-                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
-                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
+            <button class="md:hidden flex items-center justify-center w-[30px] h-[30px] bg-transparent border-none cursor-pointer p-0 relative z-[2050] text-primary transition-all duration-300 hover:scale-110" id="hamburger" aria-label="Menu">
+                <!-- Icon Menu (Hamburger) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu block transition-opacity duration-300">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+                
+                <!-- Icon Close (X) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close absolute inset-0 opacity-0 transform rotate-90 scale-50 transition-all duration-300">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                </svg>
             </button>
             
             <ul class="hidden md:flex gap-8 m-0 p-0 list-none" id="nav-menu">
@@ -165,7 +175,7 @@
     </section>
 
     <!-- Programme Section -->
-    <section class="py-24 bg-light-bg" id="programme">
+    <section class="py-24 bg-transparent" id="programme">
         <div class="container mx-auto px-8">
             <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Le Programme</h2>
             <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Une journée inoubliable vous attend</p>
@@ -227,7 +237,7 @@
     </section>
 
     <!-- Localisation Section -->
-    <section class="py-24 bg-white" id="localisation">
+    <section class="py-24 bg-transparent" id="localisation">
         <div class="container mx-auto px-8">
             <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Localisation</h2>
             <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Retrouvez-nous aux adresses suivantes</p>
@@ -282,17 +292,17 @@
     </section>
 
     <!-- Tenue / Theme Section -->
-    <section class="py-24 bg-gradient-to-br from-light-bg to-white" id="tenue">
+    <section class="py-24 bg-gradient-to-br from-soft-bg to-white" id="tenue">
         <div class="container mx-auto px-8">
             <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Tenue & Thème</h2>
             <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Tenue de soirée élégante<br>Couleurs du mariage</p>
             
             <div class="flex justify-center gap-8 my-16 flex-wrap" data-aos="zoom-in" data-aos-delay="100">
-                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #3854b7;" title="Bleu Royal"></div>
-                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #5d78d3;" title="Bleu Clair"></div>
-                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #99ceff;" title="Bleu Ciel"></div>
-                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #feb28e;" title="Pêche"></div>
-                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #ffd5c5;" title="Pêche Clair"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-2 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #3854b7;" title="Bleu Royal"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-2 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #5d78d3;" title="Bleu Clair"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-2 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #99ceff;" title="Bleu Ciel"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-2 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #feb28e;" title="Pêche"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-2 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #ffd5c5;" title="Pêche Clair"></div>
             </div>
             
             <p class="max-w-[700px] mx-auto text-center text-gray text-lg leading-loose px-8" data-aos="fade-up" data-aos-delay="150">
@@ -319,32 +329,32 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-24 bg-gradient-to-br from-light-bg to-white -mb-px" id="countdown">
+    <section class="py-24 bg-gradient-to-br from-soft-bg to-white -mb-px" id="countdown">
         <div class="container mx-auto px-4 md:px-8 overflow-hidden">
             <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Compte à Rebours</h2>
             <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Plus que quelques instants avant notre grand jour...</p>
             
             <div class="flex justify-center flex-wrap gap-3 md:gap-8 mt-8" data-aos="zoom-in" data-aos-delay="100">
                 <div class="flex flex-col items-center gap-2 md:gap-4">
-                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                    <div class="bg-white border md:border-2 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
                         <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="days">00</div>
                     </div>
                     <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Jours</div>
                 </div>
                 <div class="flex flex-col items-center gap-2 md:gap-4">
-                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                    <div class="bg-white border md:border-2 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
                         <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="hours">00</div>
                     </div>
                     <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Heures</div>
                 </div>
                 <div class="flex flex-col items-center gap-2 md:gap-4">
-                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                    <div class="bg-white border md:border-2 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
                         <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="minutes">00</div>
                     </div>
                     <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Minutes</div>
                 </div>
                 <div class="flex flex-col items-center gap-2 md:gap-4">
-                    <div class="bg-white border-2 md:border-4 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                    <div class="bg-white border md:border-2 border-primary rounded-xl md:rounded-2xl w-14 h-14 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
                         <div class="font-heading text-xl md:text-5xl font-bold text-primary leading-none" id="seconds">00</div>
                     </div>
                     <div class="text-[0.65rem] md:text-base font-semibold text-gray uppercase tracking-widest text-center">Secondes</div>

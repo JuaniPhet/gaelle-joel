@@ -16,6 +16,7 @@ module.exports = {
                 dark: '#1a1a2e',
                 'light-bg': '#fafbfc',
                 'gray-light': '#e5e7eb',
+                'soft-bg': '#fff1eb',
             },
             fontFamily: {
                 heading: ['"Cormorant Garamond"', 'serif'],
