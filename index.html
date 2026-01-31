@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,111 +18,208 @@
     <!-- AOS - Animate On Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="output.css">
+    <!-- Custom Override (if needed) -->
+    <style>
+        .timeline-item:hover .timeline-icon { transform: scale(1.1) rotate(5deg); }
+        .timeline-content { border-left: 4px solid #feb28e; }
+        .timeline-content:hover { transform: translateX(8px); }
+        .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(10.5px) rotate(45deg); }
+        .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); }
+        
+        /* Hero Background */
+        .hero-bg {
+             background: 
+                radial-gradient(circle at 20% 50%, rgba(254, 178, 142, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(153, 206, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #3854b7 0%, #5d78d3 100%);
+        }
+        
+        .scroll-arrow {
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+
+        /* Envelope Animation Styles */
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .rotate-x-180 { transform: rotateX(180deg); }
+        .origin-top { transform-origin: top; }
+        
+        /* Custom Pulse for Seal */
+        @keyframes sealPulse {
+            0% { box-shadow: 0 0 0 0 rgba(56, 84, 183, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(56, 84, 183, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(56, 84, 183, 0); }
+        }
+        .custom-seal-pulse {
+            animation: sealPulse 2s infinite;
+        }
+    </style>
 </head>
-<body>
+<body class="font-body text-dark bg-white text-base leading-relaxed overflow-x-hidden overflow-hidden">
+    <!-- Intro Overlay -->
+    <div id="intro-overlay" class="fixed inset-0 z-[2000] flex flex-col items-center justify-center bg-[#FAF7F2] transition-opacity duration-1000">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-secondary/20 blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-primary/10 blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+    
+        <!-- Invitation Text -->
+        <div class="mb-12 text-center animate-fade-in-up">
+            <p class="text-primary tracking-[0.3em] uppercase text-sm font-sans font-semibold">Du 25 au 27 Avril 2026</p>
+        </div>
+    
+        <!-- Envelope Container -->
+        <div id="envelope-container" class="relative cursor-pointer group perspective-1000" role="button" aria-label="Ouvrir l'invitation">
+            <div class="relative w-80 h-52 md:w-96 md:h-64 transition-transform duration-500 transform group-hover:scale-105 preserve-3d">
+                <!-- Envelope Body (Back) -->
+                <div class="absolute inset-0 bg-[#eaddcf] rounded-lg shadow-2xl"></div>
+                
+                <!-- Card Inside -->
+                <div id="invitation-card" class="absolute inset-x-4 top-4 bottom-4 bg-white rounded shadow-sm flex flex-col items-center justify-center z-10 transition-transform duration-1000 ease-in-out origin-bottom">
+                    <div class="text-center p-4">
+                        <p class="font-heading text-3xl text-primary mb-1">Gaëlle & Joël</p>
+                        <p class="text-xs tracking-widest text-gray uppercase">Un week-end d'exception</p>
+                    </div>
+                </div>
+    
+                <!-- Envelope Front Folds -->
+                <div class="absolute inset-0 z-20 pointer-events-none preserve-3d">
+                    <!-- Left Fold -->
+                    <div class="absolute top-0 bottom-0 left-0 w-1/2 bg-[#f8f5f2] origin-left" style="clip-path: polygon(0 0, 100% 50%, 0 100%);"></div>
+                    <!-- Right Fold -->
+                    <div class="absolute top-0 bottom-0 right-0 w-1/2 bg-[#f8f5f2] origin-right" style="clip-path: polygon(100% 0, 0 50%, 100% 100%);"></div>
+                    <!-- Bottom Fold -->
+                    <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#fdfbf7] origin-bottom shadow-sm" style="clip-path: polygon(0 100%, 50% 0, 100% 100%);"></div>
+                </div>
+    
+                <!-- Top Flap (Animated) -->
+                <div id="envelope-flap" class="absolute top-0 left-0 right-0 h-1/2 z-30 bg-[#f0ebe5] origin-top transition-all duration-1000 ease-in-out shadow-md" style="clip-path: polygon(0 0, 50% 100%, 100% 0); transform-style: preserve-3d; backface-visibility: hidden;">
+                </div>
+                <!-- Flap Inner (Visible when open) -->
+                 <div id="envelope-flap-inner" class="absolute top-0 left-0 right-0 h-1/2 z-20 bg-[#eaddcf] origin-top transition-all duration-1000 ease-in-out" style="clip-path: polygon(0 0, 50% 100%, 100% 0); transform: rotateX(180deg); opacity: 0;">
+                </div>
+    
+                <!-- Wax Seal (Click Trigger) -->
+                <div id="wax-seal" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-16 h-16 bg-gradient-to-br from-primary to-primary-light rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:shadow-xl custom-seal-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Click Text -->
+        <div class="mt-12 text-center transition-opacity duration-500" id="click-text">
+            <p class="text-secondary font-heading text-xl italic animate-bounce">Cliquez pour ouvrir</p>
+        </div>
+    </div>
+
     <!-- Fixed Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">G <span class="logo-ampersand">&</span> J</span>
+    <nav class="fixed top-0 inset-x-0 z-[1000] bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
+            <div class="font-heading text-3xl font-semibold text-primary">
+                <span class="tracking-widest">G <span class="italic text-secondary mx-1">&</span> J</span>
             </div>
             
             <!-- Hamburger Menu Button -->
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+            <button class="md:hidden flex flex-col justify-between w-[30px] h-[24px] bg-transparent border-none cursor-pointer p-0 z-[1001]" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
+                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
+                <span class="hamburger-line w-full h-[3px] bg-primary rounded-sm transition-all duration-300"></span>
             </button>
             
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#hero" class="nav-link active">Accueil</a></li>
-                <li><a href="#programme" class="nav-link">Programme</a></li>
-                <li><a href="#localisation" class="nav-link">Localisation</a></li>
-                <li><a href="#table-section" class="nav-link nav-link-table">Ma Table</a></li>
-                <li><a href="#tenue" class="nav-link">Tenue</a></li>
-                <li><a href="#reservation" class="nav-link">Réservation</a></li>
+            <ul class="hidden md:flex gap-8 m-0 p-0 list-none" id="nav-menu">
+                <li><a href="#hero" class="text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full active:text-primary active:after:w-full">Accueil</a></li>
+                <li><a href="#programme" class="text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">Programme</a></li>
+                <li><a href="#localisation" class="text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">Localisation</a></li>
+                <li><a href="#table-section" class="nav-link-table text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">Ma Table</a></li>
+                <li><a href="#tenue" class="text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">Tenue</a></li>
+                <li><a href="#reservation" class="text-dark font-medium text-[0.95rem] py-2 relative no-underline hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">Réservation</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+    <button class="fixed bottom-8 right-8 w-[50px] h-[50px] bg-gradient-to-br from-primary to-primary-light text-white border-none rounded-full text-2xl cursor-pointer shadow-md z-[999] opacity-0 invisible flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:-translate-y-0.5" id="scrollToTop" aria-label="Retour en haut">
         <span>↑</span>
     </button>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <p class="invitation-text">Vous êtes cordialement invité(e)</p>
-            <h1 class="couple-names">Gaëlle <span class="ampersand">&</span> Joël</h1>
-            <p class="wedding-date">25 Avril 2026</p>
-            <div class="welcome-message">
-                <p id="personal-greeting">Bienvenue</p>
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg" id="hero">
+        <div class="text-center text-white relative z-10 p-8" data-aos="fade-up">
+            <p class="text-base md:text-xl font-light tracking-[2px] uppercase mb-8 opacity-90">Vous êtes cordialement invité(e)</p>
+            <h1 class="text-5xl md:text-[7rem] font-light mb-4 tracking-[3px]">Gaëlle <span class="italic font-heading opacity-80 text-[0.8em] mx-[0.2em]">&</span> Joël</h1>
+            <p class="text-2xl md:text-3xl font-normal mb-16 tracking-widest">25 Avril 2026</p>
+            <div class="mt-16 p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                <p id="personal-greeting" class="text-xl md:text-3xl font-medium tracking-wide">Bienvenue</p>
             </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
+            <div class="absolute bottom-[30px] left-1/2 -translate-x-1/2 animate-bounce">
+                <div class="scroll-arrow w-6 h-6 rotate-45"></div>
             </div>
         </div>
     </section>
 
     <!-- Programme Section -->
-    <section class="programme" id="programme">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Le Programme</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Une journée inoubliable vous attend</p>
+    <section class="py-24 bg-light-bg" id="programme">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Le Programme</h2>
+            <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Une journée inoubliable vous attend</p>
             
-            <div class="timeline">
+            <div class="relative max-w-[800px] mx-auto flex flex-col gap-16">
                 <!-- Mairie / Civil -->
-                <div class="timeline-item section-civil" data-aos="fade-right" data-aos-delay="200">
-                    <div class="timeline-icon">
+                <div class="timeline-item section-civil flex relative" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-icon shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-3xl shadow-md transition-transform duration-300 mr-8 text-white">
                         <span>💍</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Cérémonie Civile</h3>
-                        <p class="time">14h00</p>
-                        <p class="location">Mairie du 15ème Arrondissement</p>
-                        <p class="description">L'union officielle de nos vies</p>
+                    <div class="timeline-content flex-1 bg-white p-8 rounded-2xl shadow-sm transition-all duration-300">
+                        <h3 class="text-3xl text-primary mb-2 font-heading font-semibold">Cérémonie Civile</h3>
+                        <p class="text-xl font-semibold text-secondary mb-2">14h00</p>
+                        <p class="font-medium text-dark mb-2">Mairie du 15ème Arrondissement</p>
+                        <p class="text-gray text-[0.95rem]">L'union officielle de nos vies</p>
                     </div>
                 </div>
 
                 <!-- Salle du Royaume / Religieux -->
-                <div class="timeline-item section-salle-royaume" data-aos="fade-left" data-aos-delay="300">
-                    <div class="timeline-icon">
+                <div class="timeline-item section-salle-royaume flex relative" data-aos="fade-left" data-aos-delay="150">
+                    <div class="timeline-icon shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-3xl shadow-md transition-transform duration-300 mr-8 text-white">
                         <span>🙏</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Cérémonie Religieuse</h3>
-                        <p class="time">16h00</p>
-                        <p class="location">Salle du Royaume</p>
-                        <p class="description">Bénédiction de notre union</p>
+                    <div class="timeline-content flex-1 bg-white p-8 rounded-2xl shadow-sm transition-all duration-300">
+                        <h3 class="text-3xl text-primary mb-2 font-heading font-semibold">Cérémonie Religieuse</h3>
+                        <p class="text-xl font-semibold text-secondary mb-2">16h00</p>
+                        <p class="font-medium text-dark mb-2">Salle du Royaume</p>
+                        <p class="text-gray text-[0.95rem]">Bénédiction de notre union</p>
                     </div>
                 </div>
 
                 <!-- Vin d'Honneur -->
-                <div class="timeline-item section-vh" data-aos="fade-right" data-aos-delay="400">
-                    <div class="timeline-icon">
+                <div class="timeline-item section-vh flex relative" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-icon shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-3xl shadow-md transition-transform duration-300 mr-8 text-white">
                         <span>🥂</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Vin d'Honneur</h3>
-                        <p class="time">17h30</p>
-                        <p class="location">Jardin de la Résidence</p>
-                        <p class="description">Cocktail et moments de partage</p>
+                    <div class="timeline-content flex-1 bg-white p-8 rounded-2xl shadow-sm transition-all duration-300">
+                        <h3 class="text-3xl text-primary mb-2 font-heading font-semibold">Vin d'Honneur</h3>
+                        <p class="text-xl font-semibold text-secondary mb-2">17h30</p>
+                        <p class="font-medium text-dark mb-2">Jardin de la Résidence</p>
+                        <p class="text-gray text-[0.95rem]">Cocktail et moments de partage</p>
                     </div>
                 </div>
 
                 <!-- Dîner -->
-                <div class="timeline-item section-diner" data-aos="fade-left" data-aos-delay="500">
-                    <div class="timeline-icon">
+                <div class="timeline-item section-diner flex relative" data-aos="fade-left" data-aos-delay="150">
+                    <div class="timeline-icon shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-3xl shadow-md transition-transform duration-300 mr-8 text-white">
                         <span>🍽️</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Dîner de Gala</h3>
-                        <p class="time">20h00</p>
-                        <p class="location">Domaine des Érables</p>
-                        <p class="description">Repas et soirée dansante</p>
+                    <div class="timeline-content flex-1 bg-white p-8 rounded-2xl shadow-sm transition-all duration-300">
+                        <h3 class="text-3xl text-primary mb-2 font-heading font-semibold">Dîner de Gala</h3>
+                        <p class="text-xl font-semibold text-secondary mb-2">20h00</p>
+                        <p class="font-medium text-dark mb-2">Domaine des Érables</p>
+                        <p class="text-gray text-[0.95rem]">Repas et soirée dansante</p>
                     </div>
                 </div>
             </div>
@@ -130,144 +227,138 @@
     </section>
 
     <!-- Localisation Section -->
-    <section class="localisation" id="localisation">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Localisation</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Retrouvez-nous aux adresses suivantes</p>
+    <section class="py-24 bg-white" id="localisation">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Localisation</h2>
+            <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Retrouvez-nous aux adresses suivantes</p>
             
-            <div class="location-grid">
+            <div class="flex flex-wrap justify-center gap-8 mt-8">
                 <!-- Civil Location -->
-                <div class="location-card location-civil" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="location-icon">📍</div>
-                    <h3>Cérémonie Civile</h3>
-                    <p class="location-address">Mairie du 15ème Arrondissement<br>31 Rue Péclet<br>75015 Paris</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                <div class="location-civil w-full md:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px] bg-gradient-to-br from-light-bg to-white p-8 rounded-2xl text-center border-2 border-gray-light shadow-sm transition-all duration-300 hover:border-primary hover:-translate-y-2 hover:shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl mb-4">📍</div>
+                    <h3 class="text-2xl text-primary mb-4 font-heading font-semibold">Cérémonie Civile</h3>
+                    <p class="text-gray mb-4 leading-relaxed">Mairie du 15ème Arrondissement<br>31 Rue Péclet<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 px-5 py-2.5 no-underline rounded-lg font-medium text-sm text-white bg-gradient-to-br from-secondary to-secondary-light shadow-sm transition-transform hover:shadow-md hover:scale-105">Voir sur la carte</a>
                 </div>
 
                 <!-- Salle Royaume Location -->
-                <div class="location-card location-salle-royaume" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="location-icon">🙏</div>
-                    <h3>Cérémonie Religieuse</h3>
-                    <p class="location-address">Salle du Royaume<br>123 Avenue de France<br>75013 Paris</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                <div class="location-salle-royaume w-full md:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px] bg-gradient-to-br from-light-bg to-white p-8 rounded-2xl text-center border-2 border-gray-light shadow-sm transition-all duration-300 hover:border-primary hover:-translate-y-2 hover:shadow-md" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="text-5xl mb-4">🙏</div>
+                    <h3 class="text-2xl text-primary mb-4 font-heading font-semibold">Cérémonie Religieuse</h3>
+                    <p class="text-gray mb-4 leading-relaxed">Salle du Royaume<br>123 Avenue de France<br>75013 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 px-5 py-2.5 no-underline rounded-lg font-medium text-sm text-white bg-gradient-to-br from-secondary to-secondary-light shadow-sm transition-transform hover:shadow-md hover:scale-105">Voir sur la carte</a>
                 </div>
 
                 <!-- VH Location -->
-                <div class="location-card location-vh" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="location-icon">🥂</div>
-                    <h3>Vin d'Honneur</h3>
-                    <p class="location-address">Jardin de la Résidence<br>456 Rue du Parc<br>75015 Paris</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                <div class="location-vh w-full md:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px] bg-gradient-to-br from-light-bg to-white p-8 rounded-2xl text-center border-2 border-gray-light shadow-sm transition-all duration-300 hover:border-primary hover:-translate-y-2 hover:shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-5xl mb-4">🥂</div>
+                    <h3 class="text-2xl text-primary mb-4 font-heading font-semibold">Vin d'Honneur</h3>
+                    <p class="text-gray mb-4 leading-relaxed">Jardin de la Résidence<br>456 Rue du Parc<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 px-5 py-2.5 no-underline rounded-lg font-medium text-sm text-white bg-gradient-to-br from-secondary to-secondary-light shadow-sm transition-transform hover:shadow-md hover:scale-105">Voir sur la carte</a>
                 </div>
 
                 <!-- Diner Location -->
-                <div class="location-card location-diner" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="location-icon">🍽️</div>
-                    <h3>Dîner de Gala</h3>
-                    <p class="location-address">Domaine des Érables<br>123 Avenue de la Liberté<br>75015 Paris</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-map">Voir sur la carte</a>
+                <div class="location-diner w-full md:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px] bg-gradient-to-br from-light-bg to-white p-8 rounded-2xl text-center border-2 border-gray-light shadow-sm transition-all duration-300 hover:border-primary hover:-translate-y-2 hover:shadow-md" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-2xl text-primary mb-4 font-heading font-semibold">Dîner de Gala</h3>
+                    <p class="text-gray mb-4 leading-relaxed">Domaine des Érables<br>123 Avenue de la Liberté<br>75015 Paris</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 px-5 py-2.5 no-underline rounded-lg font-medium text-sm text-white bg-gradient-to-br from-secondary to-secondary-light shadow-sm transition-transform hover:shadow-md hover:scale-105">Voir sur la carte</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Table Assignment Section -->
-    <section class="table-section" id="table-section" style="display: none;">
-        <div class="container">
-            <div class="table-card" data-aos="zoom-in">
-                <h2>Votre Place</h2>
+    <section class="py-16 bg-gradient-to-br from-secondary-light to-secondary text-center" id="table-section" style="display: none;">
+        <div class="container mx-auto px-8">
+            <div class="max-w-[600px] mx-auto bg-white p-16 rounded-3xl shadow-lg" data-aos="zoom-in">
+                <h2 class="text-4xl text-primary mb-8 font-heading font-semibold">Votre Place</h2>
                 <div class="table-info">
-                    <p>Vous êtes assigné(e) à la :</p>
-                    <p class="table-name" id="table-assignment">Table 1</p>
+                    <p class="text-lg text-gray mb-4">Vous êtes assigné(e) à la :</p>
+                    <p class="text-3xl font-bold text-secondary font-heading p-4 bg-gradient-to-br from-secondary-light to-transparent rounded-xl mt-4" id="table-assignment">Table 1</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tenue / Theme Section -->
-    <section class="tenue" id="tenue">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Tenue & Thème</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Tenue de soirée élégante<br>Couleurs du mariage</p>
+    <section class="py-24 bg-gradient-to-br from-light-bg to-white" id="tenue">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Tenue & Thème</h2>
+            <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Tenue de soirée élégante<br>Couleurs du mariage</p>
             
-            <div class="theme-colors" data-aos="zoom-in" data-aos-delay="100">
-                <div class="color-circle" style="background-color: #3854b7;" title="Bleu Royal"></div>
-                <div class="color-circle" style="background-color: #5d78d3;" title="Bleu Clair"></div>
-                <div class="color-circle" style="background-color: #99ceff;" title="Bleu Ciel"></div>
-                <div class="color-circle" style="background-color: #feb28e;" title="Pêche"></div>
-                <div class="color-circle" style="background-color: #ffd5c5;" title="Pêche Clair"></div>
+            <div class="flex justify-center gap-8 my-16 flex-wrap" data-aos="zoom-in" data-aos-delay="100">
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #3854b7;" title="Bleu Royal"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #5d78d3;" title="Bleu Clair"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #99ceff;" title="Bleu Ciel"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #feb28e;" title="Pêche"></div>
+                <div class="w-[100px] h-[100px] rounded-full shadow-md transition-all duration-300 cursor-pointer border-4 border-white hover:scale-115 hover:rotate-6 hover:shadow-lg" style="background-color: #ffd5c5;" title="Pêche Clair"></div>
             </div>
             
-            <p class="theme-description" data-aos="fade-up" data-aos-delay="150">
+            <p class="max-w-[700px] mx-auto text-center text-gray text-lg leading-loose px-8" data-aos="fade-up" data-aos-delay="150">
                 Nous vous invitons à porter une tenue élégante dans les tons de bleu et pêche pour harmoniser avec notre thème
             </p>
         </div>
     </section>
 
     <!-- Reservation / RSVP Section -->
-    <section class="reservation" id="reservation">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Réservation</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Merci de confirmer votre présence</p>
+    <section class="py-24 bg-gradient-to-br from-primary to-primary-light text-white" id="reservation">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl md:text-6xl text-center mb-4 text-white font-heading" data-aos="fade-up">Réservation</h2>
+            <p class="text-base md:text-xl text-center text-white/90 mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Merci de confirmer votre présence</p>
             
-            <div class="reservation-content" data-aos="zoom-in" data-aos-delay="100">
-                <div class="reservation-card">
-                    <div class="reservation-icon">✉️</div>
-                    <h3>Confirmation de présence</h3>
-                    <p>Merci de nous confirmer votre participation avant le <strong>1er Mars 2026</strong></p>
-                    <a href="https://forms.google.com" target="_blank" class="btn-primary">Confirmer ma présence</a>
-                    
-                    <!-- <div class="reservation-info">
-                        <h4>Informations pratiques</h4>
-                        <p><strong>Hébergement :</strong> Hôtel Le Grand Paris<br>456 Rue du Commerce, 75015 Paris</p>
-                        <p class="hotel-note">Code promo : <strong>GAELJOEL2026</strong></p>
-                    </div> -->
+            <div class="max-w-[700px] mx-auto" data-aos="zoom-in" data-aos-delay="100">
+                <div class="bg-white p-16 rounded-3xl shadow-lg text-center">
+                    <div class="text-[4rem] mb-8">✉️</div>
+                    <h3 class="text-3xl text-primary mb-8 font-heading font-semibold">Confirmation de présence</h3>
+                    <p class="text-gray mb-8 leading-relaxed">Merci de nous confirmer votre participation avant le <strong>1er Mars 2026</strong></p>
+                    <a href="https://forms.google.com" target="_blank" class="inline-block px-8 py-4 rounded-lg bg-primary text-white font-medium hover:bg-primary-light transition-colors shadow-md hover:shadow-lg">Confirmer ma présence</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Countdown Section -->
-    <section class="countdown" id="countdown">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Compte à Rebours</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Plus que quelques instants avant notre grand jour...</p>
+    <section class="py-24 bg-gradient-to-br from-light-bg to-white" id="countdown">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl md:text-6xl text-center mb-4 text-primary font-heading" data-aos="fade-up">Compte à Rebours</h2>
+            <p class="text-base md:text-xl text-center text-gray mb-16 font-light" data-aos="fade-up" data-aos-delay="50">Plus que quelques instants avant notre grand jour...</p>
             
-            <div class="countdown-timer" data-aos="zoom-in" data-aos-delay="100">
-                <div class="countdown-item">
-                    <div class="countdown-box">
-                        <div class="countdown-number" id="days">00</div>
+            <div class="flex justify-center gap-4 md:gap-8 flex-nowrap mt-8" data-aos="zoom-in" data-aos-delay="100">
+                <div class="flex flex-col items-center gap-4">
+                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="days">00</div>
                     </div>
-                    <div class="countdown-label">Jours</div>
+                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Jours</div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-box">
-                        <div class="countdown-number" id="hours">00</div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="hours">00</div>
                     </div>
-                    <div class="countdown-label">Heures</div>
+                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Heures</div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-box">
-                        <div class="countdown-number" id="minutes">00</div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="minutes">00</div>
                     </div>
-                    <div class="countdown-label">Minutes</div>
+                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Minutes</div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-box">
-                        <div class="countdown-number" id="seconds">00</div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="bg-white border-4 border-primary rounded-2xl w-20 h-20 md:w-32 md:h-32 flex items-center justify-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:border-secondary">
+                        <div class="font-heading text-3xl md:text-5xl font-bold text-primary leading-none" id="seconds">00</div>
                     </div>
-                    <div class="countdown-label">Secondes</div>
+                    <div class="text-sm md:text-base font-semibold text-gray uppercase tracking-widest text-center">Secondes</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">Avec tout notre amour</p>
-            <p class="footer-names">Gaëlle & Joël</p>
-            <p class="footer-date">25 Avril 2026</p>
+    <footer class="bg-dark text-white py-16 text-center">
+        <div class="container mx-auto px-8">
+            <p class="text-2xl font-light italic opacity-80 mb-4 font-heading">Avec tout notre amour</p>
+            <p class="text-3xl font-heading tracking-widest mb-4">Gaëlle & Joël</p>
+            <p class="text-base tracking-widest opacity-60">25 Avril 2026</p>
         </div>
     </footer>
 
