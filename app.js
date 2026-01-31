@@ -100,8 +100,174 @@ function initializeIntroAnimation() {
 }
 
 
-// ... (loadGuestData and other functions remain active ...
-// I will only include the changed parts for navigation below)
+/**
+ * Main function to load guest data and personalize the website
+ */
+async function loadGuestData() {
+    try {
+        // Extract guest ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestId = urlParams.get('id');
+
+        // Load invitates data
+        const response = await fetch('invitates.json');
+        const invitatesData = await response.json();
+
+        // Check if guest ID exists
+        if (guestId && invitatesData[guestId]) {
+            // Personalized version for valid guest
+            const guestData = invitatesData[guestId];
+            personalizeContent(guestData);
+            filterProgramSections(guestData.groupes);
+            filterLocationSections(guestData.groupes);
+            displayTableAssignment(guestData.table);
+        } else {
+            // Public/fallback version for invalid or missing ID
+            displayPublicVersion();
+        }
+    } catch (error) {
+        console.error('Error loading guest data:', error);
+        // Display public version on error
+        displayPublicVersion();
+    }
+}
+
+/**
+ * Personalize content with guest information
+ * @param {Object} guestData - Guest data from invitates.json
+ */
+function personalizeContent(guestData) {
+    const greetingElement = document.getElementById('personal-greeting');
+
+    if (greetingElement) {
+        // Create personalized greeting
+        const greeting = `Bonjour ${guestData.prenom} ${guestData.nom}`;
+        greetingElement.textContent = greeting;
+
+        // Add a subtle animation
+        greetingElement.style.animation = 'fadeInUp 0.8s ease-out';
+    }
+}
+
+/**
+ * Filter program sections based on guest's allowed groups
+ * @param {Array} allowedGroups - Array of group names the guest can access
+ */
+function filterProgramSections(allowedGroups) {
+    // All possible section types
+    const allSections = ['civil', 'salle-royaume', 'vh', 'diner'];
+
+    // Loop through all sections
+    allSections.forEach(sectionType => {
+        const sectionElement = document.querySelector(`.section-${sectionType}`);
+
+        if (sectionElement) {
+            if (!allowedGroups.includes(sectionType)) {
+                // Hide sections not in guest's groups
+                sectionElement.style.display = 'none';
+            } else {
+                // Ensure visible sections are displayed
+                sectionElement.style.display = 'flex';
+            }
+        }
+    });
+}
+
+/**
+ * Filter location cards based on guest's allowed groups
+ * @param {Array} allowedGroups - Array of group names the guest can access
+ */
+function filterLocationSections(allowedGroups) {
+    // All possible location types
+    const allLocations = ['civil', 'salle-royaume', 'vh', 'diner'];
+
+    // Loop through all location cards
+    allLocations.forEach(locationType => {
+        const locationElement = document.querySelector(`.location-${locationType}`);
+
+        if (locationElement) {
+            if (!allowedGroups.includes(locationType)) {
+                // Hide location cards not in guest's groups
+                locationElement.style.display = 'none';
+            } else {
+                // Ensure visible location cards are displayed
+                locationElement.style.display = 'block';
+            }
+        }
+    });
+}
+
+/**
+ * Display table assignment for the guest
+ * @param {string} tableName - Name/number of the assigned table
+ */
+function displayTableAssignment(tableName) {
+    const tableSection = document.getElementById('table-section');
+    const tableAssignmentElement = document.getElementById('table-assignment');
+    const tableLinkNav = document.querySelector('.nav-link-table');
+
+    if (tableSection && tableAssignmentElement && tableName) {
+        // Show table section
+        tableSection.style.display = 'block';
+
+        // Display table name
+        tableAssignmentElement.textContent = tableName;
+
+        // Show table navigation link
+        if (tableLinkNav) {
+            tableLinkNav.parentElement.style.display = 'list-item';
+        }
+    } else {
+        // Hide table navigation link if no table
+        if (tableLinkNav) {
+            tableLinkNav.parentElement.style.display = 'none';
+        }
+    }
+}
+
+/**
+ * Display public/fallback version of the website
+ * Shows ONLY civil and religieux (salle-royaume) ceremonies
+ */
+function displayPublicVersion() {
+    const greetingElement = document.getElementById('personal-greeting');
+    const tableSection = document.getElementById('table-section');
+    const tableLinkNav = document.querySelector('.nav-link-table');
+
+    // Set generic greeting
+    if (greetingElement) {
+        greetingElement.textContent = 'Bienvenue à notre mariage';
+    }
+
+    // Hide table section
+    if (tableSection) {
+        tableSection.style.display = 'none';
+    }
+
+    // Hide table navigation link
+    if (tableLinkNav) {
+        tableLinkNav.parentElement.style.display = 'none';
+    }
+
+    // ONLY show civil and salle-royaume (hide vh and diner)
+    const publicSections = ['civil', 'salle-royaume']; // Only these two
+    const allSections = ['civil', 'salle-royaume', 'vh', 'diner'];
+
+    allSections.forEach(sectionType => {
+        const sectionElement = document.querySelector(`.section-${sectionType}`);
+        const locationElement = document.querySelector(`.location-${sectionType}`);
+
+        if (publicSections.includes(sectionType)) {
+            // Show civil and salle-royaume
+            if (sectionElement) sectionElement.style.display = 'flex';
+            if (locationElement) locationElement.style.display = 'block';
+        } else {
+            // Hide vh and diner
+            if (sectionElement) sectionElement.style.display = 'none';
+            if (locationElement) locationElement.style.display = 'none';
+        }
+    });
+}
 
 /**
  * Initialize navigation scroll tracking and active state
