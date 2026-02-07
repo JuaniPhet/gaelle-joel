@@ -21,6 +21,7 @@ module.exports = {
             fontFamily: {
                 heading: ['"Cormorant Garamond"', 'serif'],
                 body: ['"Montserrat"', 'sans-serif'],
+                script: ['"Rouge Script"', 'cursive'],
             },
             container: {
                 center: true,

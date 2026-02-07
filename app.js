@@ -4,12 +4,17 @@
 
 // Initialize AOS (Animate On Scroll) and all features
 document.addEventListener('DOMContentLoaded', function () {
-    AOS.init({
-        duration: 500, // Faster animation
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 50
-    });
+    // Initialize AOS safely
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 500, // Faster animation
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    } else {
+        console.warn('AOS library not loaded');
+    }
 
     // Load guest data and personalize content
     loadGuestData();
@@ -34,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * Handle Envelope Intro Animation
  */
 function initializeIntroAnimation() {
+    console.log('Initializing Intro Animation...');
     const envelopeContainer = document.getElementById('envelope-container');
     const waxSeal = document.getElementById('wax-seal');
     const envelopeFlap = document.getElementById('envelope-flap');
@@ -42,23 +48,29 @@ function initializeIntroAnimation() {
     const introOverlay = document.getElementById('intro-overlay');
     const clickText = document.getElementById('click-text');
 
-    if (!envelopeContainer || !introOverlay) return;
+    // Strict check: if critical elements are missing, abort
+    if (!envelopeContainer || !introOverlay) {
+        console.error('Critical envelope elements missing');
+        return;
+    }
 
     // Ensure body is locked initially
     document.body.style.overflow = 'hidden';
 
     // Trigger open on click
     const openEnvelope = () => {
+        console.log('Opening envelope...');
         // Prevent double clicks
         if (envelopeContainer.classList.contains('is-open')) return;
         envelopeContainer.classList.add('is-open');
 
         // 1. Rotate Flap Open
-        // We act on the generic flap style
-        envelopeFlap.style.transform = 'rotateX(180deg)';
-        envelopeFlap.style.zIndex = '1'; // Move behind card visually after rotation
+        if (envelopeFlap) {
+            envelopeFlap.style.transform = 'rotateX(180deg)';
+            envelopeFlap.style.zIndex = '1'; // Move behind card visually after rotation
+        }
 
-        // Handle inner flap visibility if needed, or just let CSS handle it
+        // Handle inner flap visibility
         if (envelopeFlapInner) {
             envelopeFlapInner.style.opacity = '1';
             envelopeFlapInner.style.transform = 'rotateX(0deg)';
@@ -66,14 +78,15 @@ function initializeIntroAnimation() {
         }
 
         // Hide Seal and Text
-        waxSeal.classList.add('opacity-0', 'pointer-events-none');
-        clickText.style.opacity = '0';
+        if (waxSeal) waxSeal.classList.add('opacity-0', 'pointer-events-none');
+        if (clickText) clickText.style.opacity = '0';
 
         // 2. Slide Card Up (delayed slightly to match flap opening)
         setTimeout(() => {
-            // Move card up nicely
-            invitationCard.style.transform = 'translateY(-80px) scale(1.05)';
-            invitationCard.style.zIndex = '35'; // Bring closer to front but keep 3D consistence
+            if (invitationCard) {
+                invitationCard.style.transform = 'translateY(-80px) scale(1.05)';
+                invitationCard.style.zIndex = '35';
+            }
         }, 300);
 
         // 3. Fade Out Overlay (after reading the card briefly)
@@ -84,19 +97,24 @@ function initializeIntroAnimation() {
         // 4. Cleanup and Unlock Site
         setTimeout(() => {
             introOverlay.style.display = 'none';
-            document.body.style.overflow = '';
+            document.body.style.overflow = ''; // Unlocks scrolling
             document.body.classList.remove('overflow-hidden');
 
-            // Refresh AOS to ensure animations trigger correctly on the now-visible page
-            AOS.refresh();
+            // Refresh AOS to ensure animations trigger correctly
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
         }, 3200);
     };
 
     envelopeContainer.addEventListener('click', openEnvelope);
-    waxSeal.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent double trigger if bubbling
-        openEnvelope();
-    });
+    
+    if (waxSeal) {
+        waxSeal.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent double trigger if bubbling
+            openEnvelope();
+        });
+    }
 }
 
 
@@ -277,6 +295,9 @@ function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
+    // If no navbar, we can't do navbar logic
+    if (!navbar) return;
+
     // Track scroll for navbar shadow and active link
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
@@ -330,9 +351,12 @@ function initializeNavigation() {
  * Highlight the currently active section in the navigation
  */
 function highlightActiveSection() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    const navbarHeight = document.getElementById('navbar').offsetHeight;
+    const navbarHeight = navbar.offsetHeight;
 
     // Offset to trigger earlier (when section enters top part of screen)
     const scrollPosition = window.scrollY + navbarHeight + 50;
@@ -544,10 +568,19 @@ function updateCountdown(weddingDate) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    // Get elements
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    // If elements are missing, stop
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
     // Update display with leading zeros
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    daysEl.textContent = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
 }
 
