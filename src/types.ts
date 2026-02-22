@@ -1,10 +1,12 @@
-export type GuestGroup = "civil" | "salle-royaume" | "diner";
+export type GuestGroup = "civil" | "salle-royaume" | "vh" | "diner";
 
 export interface Guest {
   slug: string;
   prenom: string;
   nom: string;
-  table: string;
+  table?: string;
+  tableVH?: string;
+  tableDiner?: string;
   groupes: GuestGroup[];
 }
 

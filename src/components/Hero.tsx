@@ -21,7 +21,7 @@ export default function Hero({ guest }: { guest: Guest }) {
         </h2>
 
         {/* Arch Masked Photo */}
-        <div className="relative w-[280px] h-[400px] md:w-[350px] md:h-[500px] mx-auto my-8 overflow-hidden rounded-t-full shadow-2xl border-4 border-white/50">
+        <div className="relative w-[280px] h-[400px] md:w-[350px] md:h-[500px] mx-auto my-8 overflow-hidden rounded-t-full shadow-2xl border-4 border-peach-light/50">
           <img
             src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800"
             alt="Gaëlle & Joël"

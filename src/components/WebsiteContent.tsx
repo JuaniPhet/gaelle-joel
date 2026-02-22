@@ -58,9 +58,9 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           />
         )}
 
-        {guest.groupes.includes("civil") && ( // Convivial after civil?
+        {guest.groupes.includes("vh") && (
           <EventSection
-            title="Le Moment Convivial"
+            title="Le Vin d'Honneur"
             time="13:00"
             location="Happyness Garden"
             description="Le jardin réouvrira à nouveau ses portes afin que nous partagions un moment convivial ensemble."
@@ -79,7 +79,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           />
         )}
 
-        <TablePlan table={guest.table} />
+        <TablePlan guest={guest} />
 
         <Consignes />
 

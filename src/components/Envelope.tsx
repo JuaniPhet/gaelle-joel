@@ -58,10 +58,10 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-peach-light/30 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-peach-light/20 backdrop-blur-md">
       <div
         ref={envelopeRef}
-        className="relative w-[320px] h-[220px] bg-white rounded-b-lg shadow-2xl cursor-pointer perspective-1000"
+        className="relative w-[320px] h-[220px] bg-white/90 rounded-b-lg shadow-2xl cursor-pointer perspective-1000"
         onClick={handleOpen}
       >
         {/* Lid */}
@@ -72,14 +72,14 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
         />
 
         {/* Body Front Overlay (to give depth) */}
-        <div className="absolute inset-0 bg-white z-10 rounded-b-lg overflow-hidden">
+        <div className="absolute inset-0 bg-white/95 z-10 rounded-b-lg overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1),transparent)]" />
         </div>
 
         {/* Letter Inside */}
         <div
           ref={letterRef}
-          className="absolute top-4 left-4 right-4 bottom-4 bg-white shadow-inner flex flex-col items-center justify-center p-6 text-center border border-peach/20 z-0"
+          className="absolute top-4 left-4 right-4 bottom-4 bg-white/95 shadow-inner flex flex-col items-center justify-center p-6 text-center border border-peach/20 z-0"
         >
           <p className="font-serif text-royal-blue text-sm uppercase tracking-widest mb-2">
             Invitation pour

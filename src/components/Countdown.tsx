@@ -37,7 +37,7 @@ export default function Countdown() {
   }, []);
 
   const TimerBox = ({ label, value }: { label: string; value: number }) => (
-    <div className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-4 md:p-8 rounded-3xl border border-white shadow-sm w-full animate-fade-up">
+    <div className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-4 md:p-8 rounded-3xl border border-peach/20 shadow-sm w-full animate-fade-up">
       <span className="text-4xl md:text-6xl font-serif text-royal-blue mb-2">
         {value.toString().padStart(2, "0")}
       </span>

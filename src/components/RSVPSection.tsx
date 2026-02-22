@@ -41,7 +41,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
           </p>
         </div>
 
-        <div className="space-y-6 text-left bg-white p-8 md:p-12 rounded-[30px] shadow-sm border border-peach/10">
+        <div className="space-y-6 text-left bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-[30px] shadow-sm border border-peach/10">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/50">

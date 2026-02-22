@@ -20,5 +20,18 @@
       "salle-royaume",
       "vh"
     ]
+  },
+  {
+    "slug": "japhet-seumo",
+    "prenom": "Japhet",
+    "nom": "Seumo",
+    "tableVH": "Table 5 - Collègues",
+    "tableDiner": "Table d'Honneur",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
   }
 ]

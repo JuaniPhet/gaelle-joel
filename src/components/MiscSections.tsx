@@ -1,18 +1,53 @@
 "use client";
 
+import { Guest } from "@/types";
 import Section from "./Section";
 
-export function TablePlan({ table }: { table: string }) {
+export function TablePlan({ guest }: { guest: Guest }) {
+  const hasVH = guest.groupes.includes("vh");
+  const hasDiner = guest.groupes.includes("diner");
+
   return (
     <Section className="text-center py-24">
-      <div className="inline-block p-12 bg-white rounded-[60px] shadow-lg border border-peach/10 space-y-4">
-        <p className="text-peach uppercase font-sans font-bold text-xs tracking-widest">
-          Votre Place d'Honneur
-        </p>
-        <h3 className="text-3xl md:text-4xl font-serif text-royal-blue">
-          Votre table : {table}
-        </h3>
-        <div className="w-20 h-[2px] bg-peach/30 mx-auto" />
+      <div className="inline-block p-12 bg-white/60 backdrop-blur-sm rounded-[60px] shadow-lg border border-peach/10 space-y-8">
+        <div className="space-y-4">
+          <p className="text-peach uppercase font-sans font-bold text-xs tracking-widest">
+            Votre Place d'Honneur
+          </p>
+          <div className="w-20 h-[2px] bg-peach/30 mx-auto" />
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-1 divide-y divide-peach/10">
+          {hasVH && (guest.tableVH || guest.table) && (
+            <div className="pt-4 first:pt-0">
+              <p className="text-xs text-royal-blue/50 uppercase tracking-widest mb-1 font-bold">
+                Vin d'Honneur
+              </p>
+              <h3 className="text-2xl md:text-3xl font-serif text-royal-blue">
+                Table : {guest.tableVH || guest.table}
+              </h3>
+            </div>
+          )}
+
+          {hasDiner && (guest.tableDiner || guest.table) && (
+            <div className="pt-8 first:pt-0">
+              <p className="text-xs text-royal-blue/50 uppercase tracking-widest mb-1 font-bold">
+                Gala Nuptial
+              </p>
+              <h3 className="text-2xl md:text-3xl font-serif text-royal-blue">
+                Table : {guest.tableDiner || guest.table}
+              </h3>
+            </div>
+          )}
+
+          {!hasVH && !hasDiner && guest.table && (
+            <div className="pt-4">
+              <h3 className="text-3xl md:text-4xl font-serif text-royal-blue">
+                Votre table : {guest.table}
+              </h3>
+            </div>
+          )}
+        </div>
       </div>
     </Section>
   );
