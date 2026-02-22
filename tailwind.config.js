@@ -22,6 +22,7 @@ module.exports = {
                 heading: ['"Cormorant Garamond"', 'serif'],
                 body: ['"Montserrat"', 'sans-serif'],
                 script: ['"Rouge Script"', 'cursive'],
+                delphia: ['"Delphia"', 'serif'],
             },
             container: {
                 center: true,

@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Delphia";
+    font-style: normal;
+    font-weight: normal;
+    src:
+      local("Delphia"),
+      url("./fonts/DelphiaVillage.woff") format("woff");
+    font-display: swap;
+  }
+}
+
 @layer utilities {
-    .text-shadow {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }

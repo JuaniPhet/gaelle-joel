@@ -19,6 +19,16 @@
       "diner"
     ]
   },
+  "gaelle-philomene": {
+    "prenom": "Gaelle",
+    "nom": "Philomene",
+    "table": "Table 3 - Amis",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
   "c5y6": {
     "prenom": "Gaelle",
     "nom": "Philomene",
@@ -31,6 +41,16 @@
     ]
   },
   "d7w8": {
+    "prenom": "Joel",
+    "nom": "Hyacinte",
+    "table": "Table 5 - Collègues",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  "joel-hyacinte": {
     "prenom": "Joel",
     "nom": "Hyacinte",
     "table": "Table 5 - Collègues",
