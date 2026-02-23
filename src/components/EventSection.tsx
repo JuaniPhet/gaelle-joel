@@ -27,7 +27,7 @@ export default function EventSection({
     <Section className="py-24">
       <div
         className={cn(
-          "flex flex-col gap-12 items-center",
+          "flex flex-col-reverse gap-12 items-center",
           reversed ? "lg:flex-row-reverse" : "lg:flex-row",
         )}
       >
@@ -42,7 +42,16 @@ export default function EventSection({
         </div>
 
         {/* Text Content */}
-        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left px-4">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left px-4 relative">
+          {/* Subtle decorations */}
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.3 }}
+            className="absolute -top-8 -right-4 text-2xl text-peach hidden lg:block"
+          >
+            {reversed ? "❀" : "♥"}
+          </motion.span>
+
           <div className="space-y-1">
             <span className="text-peach font-sans font-bold text-sm tracking-widest uppercase">
               {time}
@@ -58,13 +67,22 @@ export default function EventSection({
           </p>
 
           {footerText && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="pt-8 font-serif text-2xl text-royal-blue text-center lg:text-left"
-            >
-              {footerText}
-            </motion.p>
+            <div className="relative pt-8">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="font-serif text-2xl text-royal-blue text-center lg:text-left"
+              >
+                {footerText}
+              </motion.p>
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 0.4, scale: 1 }}
+                className="absolute -bottom-6 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 text-peach"
+              >
+                ♥
+              </motion.span>
+            </div>
           )}
         </div>
       </div>
