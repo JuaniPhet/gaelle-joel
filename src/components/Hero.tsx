@@ -36,7 +36,7 @@ export default function Hero({ guest }: { guest: Guest }) {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="text-center space-y-6 z-10 w-full px-4"
       >
-        <h2 className="font-serif text-4xl md:text-6xl text-royal-blue tracking-tighter">
+        <h2 className="font-delphia text-5xl md:text-7xl text-royal-blue tracking-tighter">
           Gaëlle & Joël
         </h2>
 
@@ -61,7 +61,7 @@ export default function Hero({ guest }: { guest: Guest }) {
           <p className="font-sans text-xs md:text-sm uppercase tracking-[0.3em] text-peach font-bold">
             Bienvenue à notre mariage
           </p>
-          <h1 className="font-serif text-3xl md:text-5xl text-royal-blue">
+          <h1 className="font-delphia text-4xl md:text-6xl text-royal-blue">
             {guest.prenom}
           </h1>
         </div>

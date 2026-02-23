@@ -84,7 +84,7 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
           <p className="font-serif text-royal-blue text-sm uppercase tracking-widest mb-2">
             Invitation pour
           </p>
-          <h2 className="font-serif text-2xl text-royal-blue">{guestName}</h2>
+          <h2 className="font-delphia text-3xl text-royal-blue">{guestName}</h2>
           <div className="w-12 h-[1px] bg-peach mt-4" />
         </div>
 
@@ -96,7 +96,7 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
           <div className="w-14 h-14 border border-white/30 rounded-full flex items-center justify-center text-white font-serif text-[10px] text-center leading-tight">
             OUVRIR
             <br />
-            G&J
+            <span className="font-delphia text-sm tracking-normal">G&J</span>
           </div>
         </div>
       </div>

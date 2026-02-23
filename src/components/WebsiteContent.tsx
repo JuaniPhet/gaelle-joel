@@ -112,7 +112,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           </p>
           <div className="max-w-3xl mx-auto rounded-[100px] overflow-hidden shadow-xl aspect-video">
             <img
-              src="https://images.unsplash.com/photo-1519225421980-619bd20196e5?auto=format&fit=crop&q=80&w=1200"
+              src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=1200"
               alt="Décoration florale"
               className="w-full h-full object-cover"
             />

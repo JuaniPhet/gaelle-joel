@@ -31,10 +31,14 @@ export default function Footer() {
     <footer className="py-12 px-6 border-t border-peach/10 text-center space-y-4 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-peach/30 to-transparent" />
 
-      <div className="font-serif text-2xl text-royal-blue pt-4 flex items-center justify-center gap-4">
-        <span className="text-peach/40 text-sm">❀</span>
+      <div className="font-delphia text-3xl text-royal-blue pt-4 flex items-center justify-center gap-4">
+        <span className="text-peach/40 text-sm italic font-sans font-light">
+          ❀
+        </span>
         Gaëlle & Joël
-        <span className="text-peach/40 text-sm">♥</span>
+        <span className="text-peach/40 text-sm italic font-sans font-light">
+          ♥
+        </span>
       </div>
 
       <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-royal-blue/40 font-bold">

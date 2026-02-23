@@ -33,7 +33,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
     <Section id="rsvp" className="bg-peach-light/20 rounded-[50px] mb-20 py-20">
       <div className="max-w-2xl mx-auto text-center space-y-12">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-serif text-royal-blue">
+          <h2 className="text-4xl md:text-5xl font-delphia text-royal-blue">
             Confirmez votre présence {guest.prenom}
           </h2>
           <p className="text-royal-blue/70">
@@ -122,7 +122,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
                   <p className="text-[10px] uppercase font-bold text-royal-blue/40 tracking-widest">
                     Invité
                   </p>
-                  <p className="font-serif text-2xl text-royal-blue">
+                  <p className="font-delphia text-3xl text-royal-blue">
                     {guest.prenom} {guest.nom}
                   </p>
                 </div>
