@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mariage de Gaëlle & Joël | 25 Avril 2026",
-  description: "Invitation personnalisée pour le mariage de Gaëlle et Joël.",
+  title: "Gaëlle & Joël | 25 Avril 2026",
+  description: "Invitation pour le mariage de Gaëlle et Joël.",
 };
 
 export default function RootLayout({

@@ -4,6 +4,7 @@
   --background: #fff5f0; /* Saumon très clair */
   --foreground: #1a2a4a; /* Bleu nuit au lieu de noir */
   --royal-blue: #2b50aa;
+  --sky-blue: #99ceff;
   --peach: #ffb080;
   --peach-light: #ffd9c0;
   --white: #ffffff;
@@ -20,6 +21,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-royal-blue: var(--royal-blue);
+  --color-sky-blue: var(--sky-blue);
   --color-peach: var(--peach);
   --color-peach-light: var(--peach-light);
   --color-white: var(--white);

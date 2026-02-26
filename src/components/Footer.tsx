@@ -28,26 +28,26 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-6 border-t border-peach/10 text-center space-y-4 bg-background relative overflow-hidden">
+    <footer className="py-12 px-6 border-t border-peach/10 text-center space-y-4 bg-royal-blue relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-peach/30 to-transparent" />
 
-      <div className="font-delphia text-3xl text-royal-blue pt-4 flex items-center justify-center gap-4">
-        <span className="text-peach/40 text-sm italic font-sans font-light">
-          ❀
-        </span>
+      <div className="font-delphia text-5xl text-background pt-4 flex items-center justify-center gap-4">
         Gaëlle & Joël
-        <span className="text-peach/40 text-sm italic font-sans font-light">
-          ♥
-        </span>
       </div>
 
-      <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-royal-blue/40 font-bold">
-        25 AVRIL 2026 • YAOUNDÉ, CAMEROUN
+      <p className="font-sans text-xl tracking-widest text-peach/80 font-bold">
+        25 Avril 2026 • Douala
       </p>
 
-      <div className="pt-8 opacity-30 text-[9px] uppercase tracking-widest text-royal-blue flex items-center justify-center gap-2">
-        <span>© 2026 — Fait avec</span>
-        <span className="text-peach text-xs">♥</span>
+      <div className="flex items-center justify-center gap-6">
+        <div className="w-16 h-[2px] bg-white/40" />
+        <span className="text-peach text-3xl animate-pulse">♥</span>
+        <div className="w-16 h-[2px] bg-white/40" />
+      </div>
+
+      <div className="pt-8 opacity-70 text-sm md:text-base tracking-widest text-background flex items-center justify-center gap-2 whitespace-nowrap">
+        <span>Fait avec</span>
+        <span className="text-peach-light text-3xl animate-pulse">♥</span>
         <span>pour notre grand jour</span>
       </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
           pointerEvents: isVisible ? "auto" : "none",
         }}
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-40 bg-royal-blue text-white p-4 rounded-full shadow-2xl hover:bg-royal-blue/90 transition-all hover:-translate-y-1 active:scale-95 group"
+        className="fixed bottom-8 right-8 z-40 bg-peach text-royal-blue p-4 rounded-full shadow-2xl hover:bg-peach/90 transition-all hover:-translate-y-1 active:scale-95 group"
         aria-label="Retour en haut"
       >
         <ChevronUp className="w-6 h-6 group-hover:animate-bounce" />

@@ -34,7 +34,7 @@ export default function Hero({ guest }: { guest: Guest }) {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="text-center space-y-6 z-10 w-full px-4"
+        className="text-center space-y-6 md:space-y-0 z-10 w-full px-4"
       >
         <h2 className="font-delphia text-5xl md:text-7xl text-royal-blue tracking-tighter">
           Gaëlle & Joël
@@ -57,11 +57,11 @@ export default function Hero({ guest }: { guest: Guest }) {
           />
         </div>
 
-        <div className="space-y-2">
-          <p className="font-sans text-xs md:text-sm uppercase tracking-[0.3em] text-peach font-bold">
+        <div className="space-y-2 md:space-y-6">
+          <p className="font-sans text-sm md:text-sm uppercase tracking-[0.2em] text-peach font-bold">
             Bienvenue à notre mariage
           </p>
-          <h1 className="font-delphia text-4xl md:text-6xl text-royal-blue">
+          <h1 className="font-serif text-3xl md:text-5xl text-royal-blue">
             {guest.prenom}
           </h1>
         </div>

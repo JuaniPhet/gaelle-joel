@@ -32,13 +32,35 @@ export default function EventSection({
         )}
       >
         {/* Image with Organic/Ovale Mask */}
-        <div className="w-full lg:w-1/2 relative aspect-[4/5] rounded-[100px] overflow-hidden shadow-xl border border-peach/20 group">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-royal-blue/10 group-hover:bg-transparent transition-colors duration-500" />
+        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+          <div className="relative aspect-[4/4] rounded-[50px] overflow-hidden shadow-xl border border-peach/20 group">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-royal-blue/10 group-hover:bg-transparent transition-colors duration-500" />
+          </div>
+
+          {/* Mobile Footer (Under Image) */}
+          <div className="relative lg:hidden text-center pt-8">
+            {footerText && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="font-serif text-2xl text-royal-blue mb-8"
+              >
+                {footerText}
+              </motion.p>
+            )}
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 0.4, scale: 1 }}
+              className="text-peach text-2xl inline-block"
+            >
+              ♥
+            </motion.span>
+          </div>
         </div>
 
         {/* Text Content */}
@@ -53,37 +75,38 @@ export default function EventSection({
           </motion.span>
 
           <div className="space-y-1">
-            <span className="text-peach font-sans font-bold text-sm tracking-widest uppercase">
+            <p className="text-peach font-sans font-bold text-2xl tracking-widest uppercase">
               {time}
-            </span>
-            <h3 className="text-3xl md:text-4xl font-serif text-royal-blue">
+            </p>
+            <h3 className="text-5xl md:text-6xl font-delphia text-royal-blue">
               {title}
             </h3>
-            <p className="text-royal-blue/60 italic font-serif">{location}</p>
+            <p className="text-royal-blue/60 font-sans">{location}</p>
           </div>
 
-          <p className="text-foreground/80 leading-relaxed font-sans text-lg">
+          <p className="text-foreground/80 leading-relaxed font-serif text-2xl">
             {description}
           </p>
 
-          {footerText && (
-            <div className="relative pt-8">
+          {/* Desktop Footer (Inside text column) */}
+          <div className="relative pt-12 hidden lg:block">
+            {footerText && (
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="font-serif text-2xl text-royal-blue text-center lg:text-left"
+                className="font-serif text-2xl text-royal-blue mb-10 text-center lg:text-left"
               >
                 {footerText}
               </motion.p>
-              <motion.span
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 0.4, scale: 1 }}
-                className="absolute -bottom-6 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 text-peach"
-              >
-                ♥
-              </motion.span>
-            </div>
-          )}
+            )}
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 0.4, scale: 1 }}
+              className="text-peach text-2xl inline-block lg:ml-0"
+            >
+              ♥
+            </motion.span>
+          </div>
         </div>
       </div>
     </Section>

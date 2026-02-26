@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Section from "./Section";
+import { motion } from "framer-motion";
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -52,28 +53,63 @@ export default function Countdown() {
       {/* Hand-drawn style accents (SVGs) */}
       <div className="max-w-4xl mx-auto space-y-16 relative">
         <div className="space-y-4">
-          <h2 className="text-3xl md:text-5xl font-serif text-royal-blue">
-            Le décompte a commencé
+          <h2 className="text-5xl md:text-6xl font-delphia text-royal-blue">
+            Nous comptons les jours
           </h2>
-          <p className="text-royal-blue/60 italic">
-            Chaque seconde nous rapproche de ce moment magique.
+          <p className="text-royal-blue/80 text-xl">
+            Notre journée spéciale se dessine dans...
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+        <div className="grid grid-cols-4 gap-2 px-2 md:grid-cols-4 md:gap-4 md:px-4">
           <TimerBox label="Jours" value={timeLeft.days} />
           <TimerBox label="Heures" value={timeLeft.hours} />
           <TimerBox label="Minutes" value={timeLeft.minutes} />
           <TimerBox label="Secondes" value={timeLeft.seconds} />
         </div>
 
-        <div className="flex justify-center items-center gap-8 opacity-40 select-none">
-          <span className="font-serif italic text-xl">Gaëlle</span>
-          <div className="w-16 h-[1px] bg-royal-blue relative">
-            <div className="absolute -top-1 left-1/2 w-2 h-2 rounded-full bg-peach" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="flex justify-center items-center gap-6 mt-12 bg-white/30 backdrop-blur-3xl py-6 px-10 rounded-full border border-peach/10 shadow-sm inline-flex mx-auto"
+        >
+          <span className="font-delphia text-4xl text-royal-blue/60 group-hover:text-royal-blue transition-colors duration-500">
+            Gaëlle
+          </span>
+
+          <div className="relative flex items-center justify-center w-12 h-12">
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.4, 0.8, 0.4],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 bg-peach/20 rounded-full blur-md"
+            />
+            <motion.span
+              animate={{
+                scale: [1, 1.3, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="text-peach text-3xl z-10 filter drop-shadow-sm"
+            >
+              ♥
+            </motion.span>
           </div>
-          <span className="font-serif italic text-xl">Joël</span>
-        </div>
+
+          <span className="font-delphia text-4xl text-royal-blue/60 group-hover:text-royal-blue transition-colors duration-500">
+            Joël
+          </span>
+        </motion.div>
       </div>
     </Section>
   );

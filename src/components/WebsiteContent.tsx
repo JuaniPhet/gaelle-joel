@@ -97,7 +97,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
         )}
         <Hero guest={guest} />
 
-        <Section className="text-center italic font-serif text-2xl lg:text-3xl text-royal-blue/80 py-32 space-y-12 relative overflow-hidden">
+        <Section className="text-center font-serif text-2xl lg:text-3xl text-foreground/80 py-32 space-y-12 relative overflow-hidden">
           <motion.div
             animate={{ y: [0, -10, 0], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -106,13 +106,14 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             ❀
           </motion.div>
           <p>
-            "Les fleurs fleurissent, les coeurs s'aiment, et la vie trouve son
+            Les fleurs fleurissent, les coeurs s'aiment, et la vie trouve son
             plus beau sens entre les deux. Nous serons heureux de vous compter
-            parmi nos convives le 25 Avril 2026."
+            parmi nos convives le
+            <span className="font-bold"> 25 Avril 2026</span>.
           </p>
-          <div className="max-w-3xl mx-auto rounded-[100px] overflow-hidden shadow-xl aspect-video">
+          <div className="max-w-3xl mx-auto rounded-[50px] overflow-hidden shadow-xl aspect-[4/5] lg:aspect-video">
             <img
-              src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=1200"
+              src="img/1.jpeg"
               alt="Décoration florale"
               className="w-full h-full object-cover"
             />
@@ -141,7 +142,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             title="La Bénédiction Nuptiale"
             time="11:00"
             location="Salle du Royaume (Kambo-Pariso)"
-            description="Nous nous retrouverons pour la bénédiction nuptiale dans la sérénité et le respect."
+            description="Nous nous y retrouverons pour la bénédiction nuptiale dans la sérénité et le respect."
             image="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200"
             reversed
           />
@@ -153,7 +154,8 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             time="13:00"
             location="Happyness Garden"
             description="Le jardin réouvrira à nouveau ses portes afin que nous partagions un moment convivial ensemble."
-            image="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=1200"
+            image="img/happynessgarden-2.png"
+            footerText="Nous avons hâte de passer cette journée en votre compagnie."
           />
         )}
 

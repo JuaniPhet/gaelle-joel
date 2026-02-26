@@ -18,11 +18,11 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
   const handleWhatsApp = () => {
     const isPresent = formData.presence === "oui";
     const status = isPresent
-      ? "Confirme ma présence ✅"
-      : "Ne pourra malheureusement pas être présent(e) ❌";
+      ? "Confirme ma présence"
+      : "Ne pourra malheureusement pas être présent(e)";
     const guestFull = `${guest.prenom} ${guest.nom}`;
 
-    let messageContent = `✨ *RÉPONSE INVITATION MARIAGE GAËLLE & JOËL* ✨\n\n`;
+    let messageContent = `*RÉPONSE INVITATION MARIAGE GAËLLE & JOËL*\n\n`;
     messageContent += `*Invité(e):* ${guestFull}\n`;
     messageContent += `*Statut:* ${status}\n`;
 
@@ -52,13 +52,17 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
   };
 
   return (
-    <Section id="rsvp" className="bg-peach-light/20 rounded-[50px] mb-20 py-20">
+    <Section id="rsvp" className="bg-peach-light/20 rounded-[50px] my-20 py-20">
       <div className="max-w-2xl mx-auto text-center space-y-12">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-delphia text-royal-blue">
-            Confirmez votre présence {guest.prenom}
+          <h2 className="text-5xl md:text-6xl font-delphia text-royal-blue">
+            Confirmez votre présence
           </h2>
-          <p className="text-royal-blue/70">
+          <p className="text-royal-blue font-serif text-xl">
+            <span className="text-3xl font-bold italic">
+              {guest.prenom} {guest.nom},
+            </span>{" "}
+            <br />
             Nous avons hâte de célébrer avec vous !
           </p>
         </div>
@@ -66,7 +70,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
         <div className="space-y-6 text-left bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-[30px] shadow-sm border border-peach/10">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/50">
+              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
                 Présence
               </label>
               <select
@@ -81,7 +85,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/50">
+              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
                 Nombre de places
               </label>
               <select
@@ -101,7 +105,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/50">
+            <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
               Un petit mot pour nous ?
             </label>
             <textarea
@@ -117,16 +121,16 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
 
           <div className="flex flex-col md:flex-row gap-4 pt-4">
             <button
-              onClick={() => setShowTicket(true)}
+              onClick={handleWhatsApp}
               className="flex-1 py-4 bg-royal-blue text-white rounded-xl font-bold hover:bg-royal-blue/90 transition-all active:scale-95"
             >
-              Générer mon Billet
+              Réserver sur WhatsApp
             </button>
             <button
-              onClick={handleWhatsApp}
+              onClick={() => setShowTicket(true)}
               className="flex-1 py-4 border-2 border-royal-blue text-royal-blue rounded-xl font-bold hover:bg-royal-blue/5 transition-all active:scale-95"
             >
-              Réserver via WhatsApp
+              Générer mon Billet
             </button>
           </div>
         </div>
