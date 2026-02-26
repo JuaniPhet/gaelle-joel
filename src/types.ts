@@ -7,6 +7,7 @@ export interface Guest {
   table?: string;
   tableVH?: string;
   tableDiner?: string;
+  contactSms?: string;
   groupes: GuestGroup[];
 }
 

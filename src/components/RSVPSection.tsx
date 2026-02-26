@@ -16,10 +16,32 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
   const [showTicket, setShowTicket] = useState(false);
 
   const handleWhatsApp = () => {
-    const text = `Bonjour Gaëlle & Joël ! %0A%0AJe confirme ma présence : ${formData.presence === "oui" ? "OUI ✅" : "NON ❌"}%0AAnsi que pour : ${formData.nombre} personne(s).%0AMessage : ${formData.message}%0A%0A- ${guest.prenom} ${guest.nom}`;
-    window.open(`https://wa.me/237695098342?text=${text}`, "_blank");
+    const isPresent = formData.presence === "oui";
+    const status = isPresent
+      ? "Confirme ma présence ✅"
+      : "Ne pourra malheureusement pas être présent(e) ❌";
+    const guestFull = `${guest.prenom} ${guest.nom}`;
 
-    if (formData.presence === "oui") {
+    let messageContent = `✨ *RÉPONSE INVITATION MARIAGE GAËLLE & JOËL* ✨\n\n`;
+    messageContent += `*Invité(e):* ${guestFull}\n`;
+    messageContent += `*Statut:* ${status}\n`;
+
+    if (isPresent) {
+      messageContent += `*Nombre de personnes:* ${formData.nombre}\n`;
+    }
+
+    if (formData.message.trim()) {
+      messageContent += `\n*Note personnelle:*\n"${formData.message.trim()}"\n`;
+    }
+
+    messageContent += `\n---\n_Envoyé depuis le site de Gaëlle & Joël_`;
+
+    const encodedText = encodeURIComponent(messageContent);
+    const phoneNumber = guest.contactSms || "237695098342";
+
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+
+    if (isPresent) {
       confetti({
         particleCount: 150,
         spread: 70,

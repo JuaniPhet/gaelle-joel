@@ -4,6 +4,7 @@
     "prenom": "Gaelle",
     "nom": "Philomene",
     "table": "Table 3 - Amis",
+    "contactSms": "237695098342",
     "groupes": [
       "civil",
       "salle-royaume",
@@ -15,6 +16,7 @@
     "prenom": "Joel",
     "nom": "Hyacinte",
     "table": "Table 5 - Collègues",
+    "contactSms": "237682418356",
     "groupes": [
       "civil",
       "salle-royaume",
@@ -27,6 +29,7 @@
     "nom": "Seumo",
     "tableVH": "Table 5 - Collègues",
     "tableDiner": "Table d'Honneur",
+    "contactSms": "237695098342",
     "groupes": [
       "civil",
       "salle-royaume",
