@@ -24,6 +24,18 @@
     ]
   },
   {
+    "slug": "brigitte-seumo",
+    "prenom": "Brigitte",
+    "nom": "Seumo",
+    "table": "Table 5 - Collègues",
+    "contactSms": "237682418356",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
     "slug": "japhet-seumo",
     "prenom": "Japhet",
     "nom": "Seumo",
