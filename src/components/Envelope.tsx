@@ -49,7 +49,7 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
     setIsOpened(true);
 
     // Play Music
-    const audio = new Audio("/sounds/goulam-Ta_main.mp3");
+    const audio = new Audio("/sounds/Goulam-Ta_main.mp3");
     audio
       .play()
       .catch((err) => console.log("Audio playback interaction required:", err));
