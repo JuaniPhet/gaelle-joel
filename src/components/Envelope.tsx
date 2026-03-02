@@ -48,6 +48,12 @@ export default function Envelope({ guestName, onOpen }: EnvelopeProps) {
     if (isOpened) return;
     setIsOpened(true);
 
+    // Play Music
+    const audio = new Audio("/sounds/goulam-Ta_main.mp3");
+    audio
+      .play()
+      .catch((err) => console.log("Audio playback interaction required:", err));
+
     const tl = gsap.timeline({
       onComplete: onOpen,
     });

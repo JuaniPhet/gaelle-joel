@@ -105,12 +105,46 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           >
             ❀
           </motion.div>
-          <p>
-            Les fleurs fleurissent, les coeurs s'aiment, et la vie trouve son
-            plus beau sens entre les deux. Nous serons heureux de vous compter
-            parmi nos convives le
-            <span className="font-bold"> 25 Avril 2026</span>.
-          </p>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {[
+              "Les fleurs fleurissent,",
+              "les coeurs s'aiment,",
+              "et la vie trouve son plus beau sens entre les deux.",
+              "Nous serons heureux de vous compter parmi nos convives le",
+            ].map((line, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 1 }}
+                className="leading-tight"
+              >
+                {line}
+              </motion.p>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 4.3 }}
+            >
+              <motion.p
+                animate={{
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2,
+                }}
+                className="font-bold text-royal-blue text-4xl lg:text-5xl mt-4"
+              >
+                25 Avril 2026
+              </motion.p>
+            </motion.div>
+          </div>
           <div className="max-w-3xl mx-auto rounded-[50px] overflow-hidden shadow-xl aspect-[4/5] lg:aspect-video">
             <img
               src="img/22.png"
