@@ -70,39 +70,39 @@ export function ThemeVestimentaire() {
           </p>
         </div>
 
-        <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-8 md:gap-12 px-4">
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-royal-blue shadow-xl transform hover:scale-110 transition-transform duration-300" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 px-4 justify-items-center">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-royal-blue shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Bleu Royal
             </span>
           </div>
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-royal-blue/80 shadow-xl transform hover:scale-110 transition-transform duration-300" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-royal-blue/80 shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Bleu Cassé
             </span>
           </div>
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-sky-blue shadow-xl transform hover:scale-110 transition-transform duration-300" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-sky-blue shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Bleu Ciel
             </span>
           </div>
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-peach shadow-xl transform hover:scale-110 transition-transform duration-300" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-peach shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Saumon
             </span>
           </div>
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-peach-light shadow-xl transform hover:scale-110 transition-transform duration-300" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-peach-light shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Saumon Clair
             </span>
           </div>
-          <div className="flex flex-col items-center gap-3 w-[140px] md:w-auto">
-            <div className="w-40 h-40 rounded-full bg-white shadow-xl transform hover:scale-110 transition-transform duration-300" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-32 h-32 sm:w-40 lg:w-40 lg:h-40 sm:h-40 rounded-full bg-white shadow-xl transform hover:scale-110 transition-transform duration-300" />
             <span className="text-xs uppercase tracking-widest text-royal-blue/60 font-bold">
               Blanc
             </span>
@@ -110,8 +110,8 @@ export function ThemeVestimentaire() {
         </div>
 
         <p className="text-xl md:text-2xl font-serif text-royal-blue/80 px-8 max-w-2xl mx-auto leading-relaxed">
-          Nous serions ravis que vos tenues s'inspirent de nos couleurs afin de
-          créer une harmonie visuelle lors de cette journée spéciale.
+          Nous serions ravis que vos tenues modestes s'inspirent de nos couleurs
+          afin de créer une harmonie visuelle lors de cette journée spéciale.
         </p>
       </div>
     </Section>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero({ guest }: { guest: Guest }) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-10 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-10 pb-10 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-peach/10 rounded-full blur-3xl -z-10 animate-pulse" />
       <div className="absolute bottom-10 left-0 w-80 h-80 bg-royal-blue/5 rounded-full blur-3xl -z-10" />
@@ -34,16 +34,16 @@ export default function Hero({ guest }: { guest: Guest }) {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="text-center space-y-6 md:space-y-0 z-10 w-full px-4"
+        className="text-center space-y-6 md:space-y-0 z-10 w-full"
       >
         <h2 className="font-delphia text-5xl md:text-7xl text-royal-blue tracking-tighter">
           Gaëlle & Joël
         </h2>
 
         {/* Invisible Image Container for Layout only */}
-        <div className="relative w-full h-[450px] md:h-[450px] mx-auto my-4 overflow-hidden">
+        <div className="relative w-full h-[450px] md:h-[450px] px-4 mx-auto my-4 overflow-hidden">
           <motion.img
-            src="/img/hero-image.png"
+            src="/img/hero.png"
             alt="Gaëlle & Joël"
             animate={{
               scale: [1, 1.1, 1],
@@ -72,7 +72,7 @@ export default function Hero({ guest }: { guest: Guest }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 flex flex-col items-center gap-3"
+        className="absolute bottom-5 flex flex-col items-center gap-3"
       >
         <span className="text-[10px] uppercase tracking-[0.4em] text-royal-blue/60 font-semibold">
           Découvrir

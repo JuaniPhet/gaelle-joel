@@ -10,7 +10,6 @@ import confetti from "canvas-confetti";
 export default function RSVPSection({ guest }: { guest: Guest }) {
   const [formData, setFormData] = useState({
     presence: "oui",
-    nombre: 1,
     message: "",
   });
   const [showTicket, setShowTicket] = useState(false);
@@ -25,10 +24,6 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
     let messageContent = `*RÉPONSE INVITATION MARIAGE GAËLLE & JOËL*\n\n`;
     messageContent += `*Invité(e):* ${guestFull}\n`;
     messageContent += `*Statut:* ${status}\n`;
-
-    if (isPresent) {
-      messageContent += `*Nombre de personnes:* ${formData.nombre}\n`;
-    }
 
     if (formData.message.trim()) {
       messageContent += `\n*Note personnelle:*\n"${formData.message.trim()}"\n`;
@@ -68,40 +63,20 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
         </div>
 
         <div className="space-y-6 text-left bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-[30px] shadow-sm border border-peach/10">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
-                Présence
-              </label>
-              <select
-                value={formData.presence}
-                onChange={(e) =>
-                  setFormData({ ...formData, presence: e.target.value as any })
-                }
-                className="w-full p-4 rounded-xl border border-peach/20 focus:ring-2 focus:ring-peach bg-transparent outline-none"
-              >
-                <option value="oui">Oui je serai là</option>
-                <option value="non">Non désolé(e)</option>
-              </select>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
-                Nombre de places
-              </label>
-              <select
-                value={formData.nombre}
-                onChange={(e) =>
-                  setFormData({ ...formData, nombre: parseInt(e.target.value) })
-                }
-                className="w-full p-4 rounded-xl border border-peach/20 focus:ring-2 focus:ring-peach bg-transparent outline-none"
-              >
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <option key={n} value={n}>
-                    {n}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-widest font-bold text-royal-blue/80">
+              Présence
+            </label>
+            <select
+              value={formData.presence}
+              onChange={(e) =>
+                setFormData({ ...formData, presence: e.target.value as any })
+              }
+              className="w-full p-4 rounded-xl border border-peach/20 focus:ring-2 focus:ring-peach bg-transparent outline-none"
+            >
+              <option value="oui">Oui je serai là</option>
+              <option value="non">Non désolé(e)</option>
+            </select>
           </div>
 
           <div className="space-y-2">
@@ -172,10 +147,10 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-bold text-royal-blue/40 tracking-widest">
-                    Places
+                    Statut
                   </p>
-                  <p className="font-serif text-lg text-royal-blue">
-                    ADMIS x {formData.nombre}
+                  <p className="font-serif text-lg text-royal-blue uppercase">
+                    Admis
                   </p>
                 </div>
               </div>

@@ -113,7 +113,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           </p>
           <div className="max-w-3xl mx-auto rounded-[50px] overflow-hidden shadow-xl aspect-[4/5] lg:aspect-video">
             <img
-              src="img/1.jpeg"
+              src="img/22.png"
               alt="Décoration florale"
               className="w-full h-full object-cover"
             />
@@ -130,20 +130,20 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
         {guest.groupes.includes("civil") && (
           <EventSection
             title="La Cérémonie Civile"
-            time="08:30"
+            time="09:00"
             location="Happyness Garden"
             description="Dans ce cadre enchanteur, entourés de fleurs et de verdure, vous serez témoins du début d'une aventure éternelle."
-            image="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200"
+            image="img/2.jpeg"
           />
         )}
 
         {guest.groupes.includes("salle-royaume") && (
           <EventSection
             title="La Bénédiction Nuptiale"
-            time="11:00"
+            time="12:30"
             location="Salle du Royaume (Kambo-Pariso)"
             description="Nous nous y retrouverons pour la bénédiction nuptiale dans la sérénité et le respect."
-            image="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200"
+            image="img/4.jpg"
             reversed
           />
         )}
@@ -151,10 +151,10 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
         {guest.groupes.includes("vh") && (
           <EventSection
             title="Le Vin d'Honneur"
-            time="13:00"
-            location="Happyness Garden"
+            time="13:30"
+            location="Happyness Garden (Nyalla Kambo)"
             description="Le jardin réouvrira à nouveau ses portes afin que nous partagions un moment convivial ensemble."
-            image="img/happynessgarden-2.png"
+            image="img/5.jpg"
             footerText="Nous avons hâte de passer cette journée en votre compagnie."
           />
         )}
@@ -163,9 +163,9 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           <EventSection
             title="Le Gala Nuptial"
             time="18:30"
-            location="Salle de fête de Rodann, Neptune Nyalla"
+            location="Salle de fête de Rodann (après l'agence eneo Yassa)"
             description="Les fleurs ont éclos, le jardin est en fête. L'amour est dans l'air et la musique est prête."
-            image="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200"
+            image="img/3.png"
             footerText="Il ne manque plus que vous."
           />
         )}

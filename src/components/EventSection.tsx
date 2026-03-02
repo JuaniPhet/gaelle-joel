@@ -75,9 +75,32 @@ export default function EventSection({
           </motion.span>
 
           <div className="space-y-1">
-            <p className="text-peach font-sans font-bold text-2xl tracking-widest uppercase">
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              animate={{
+                scale: [1, 1.05, 1],
+                textShadow: [
+                  "0 0 0px rgba(255, 176, 128, 0)",
+                  "0 0 10px rgba(255, 176, 128, 0.4)",
+                  "0 0 0px rgba(255, 176, 128, 0)",
+                ],
+              }}
+              transition={{
+                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                textShadow: {
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+                opacity: { duration: 0.8 },
+                x: { duration: 0.8 },
+              }}
+              className="text-peach font-sans font-bold text-2xl tracking-widest uppercase"
+            >
               {time}
-            </p>
+            </motion.p>
             <h3 className="text-5xl md:text-6xl font-delphia text-royal-blue">
               {title}
             </h3>

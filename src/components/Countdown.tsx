@@ -74,9 +74,11 @@ export default function Countdown() {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex justify-center items-center gap-6 mt-12 bg-white/30 backdrop-blur-3xl py-6 px-10 rounded-full border border-peach/10 shadow-sm inline-flex mx-auto"
         >
-          <span className="font-delphia text-4xl text-royal-blue/60 group-hover:text-royal-blue transition-colors duration-500">
-            Gaëlle
-          </span>
+          <img
+            src="img/gg.jpg"
+            alt="Gaëlle"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-peach/30 shadow-lg"
+          />
 
           <div className="relative flex items-center justify-center w-12 h-12">
             <motion.div
@@ -106,9 +108,11 @@ export default function Countdown() {
             </motion.span>
           </div>
 
-          <span className="font-delphia text-4xl text-royal-blue/60 group-hover:text-royal-blue transition-colors duration-500">
-            Joël
-          </span>
+          <img
+            src="img/jj.jpg"
+            alt="Joël"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-peach/30 shadow-lg"
+          />
         </motion.div>
       </div>
     </Section>
