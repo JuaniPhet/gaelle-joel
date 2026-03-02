@@ -166,7 +166,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             title="La Cérémonie Civile"
             time="09:00"
             location="Happyness Garden"
-            description="Dans ce cadre enchanteur, entourés de fleurs et de verdure, vous serez témoins du début d'une aventure éternelle."
+            description="Dans ce cadre enchanteur, entouré de fleurs et de verdure, vous serez témoins du début d'une aventure éternelle."
             image="img/2.jpeg"
           />
         )}

@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Guest } from "@/types";
 import Section from "./Section";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
+import { toPng } from "html-to-image";
+import { Download } from "lucide-react";
 
 export default function RSVPSection({ guest }: { guest: Guest }) {
   const [formData, setFormData] = useState({
@@ -13,6 +15,28 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
     message: "",
   });
   const [showTicket, setShowTicket] = useState(false);
+  const ticketRef = useRef<HTMLDivElement>(null);
+
+  const downloadTicket = async () => {
+    if (ticketRef.current === null) return;
+    try {
+      const dataUrl = await toPng(ticketRef.current, {
+        cacheBust: true,
+        backgroundColor: "#ffffff",
+        pixelRatio: 2, // Higher quality
+        style: {
+          margin: "0",
+          display: "block",
+        },
+      });
+      const link = document.createElement("a");
+      link.download = `ticket-${guest.prenom}-${guest.nom}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error("Erreur lors du téléchargement du billet :", err);
+    }
+  };
 
   const handleWhatsApp = () => {
     const isPresent = formData.presence === "oui";
@@ -111,74 +135,87 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
         </div>
 
         {showTicket && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="mt-12 max-w-sm mx-auto p-1 bg-white rounded-[40px] shadow-2xl overflow-hidden relative"
-          >
-            {/* Artistic Border/Frame */}
-            <div className="border-4 border-peach/20 m-3 rounded-[32px] p-8 flex flex-col items-center bg-[radial-gradient(circle_at_top_right,#fff5f0_0%,#ffffff_60%)]">
-              {/* Couple Header */}
-              <div className="space-y-1 mb-8">
-                <h4 className="font-delphia text-3xl text-royal-blue leading-tight">
-                  Gaëlle & Joël
-                </h4>
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-8 h-[1px] bg-peach/30" />
-                  <span className="text-peach text-sm uppercase tracking-widest font-bold">
-                    25.04.2026
-                  </span>
-                  <div className="w-8 h-[1px] bg-peach/30" />
+          <div className="space-y-6">
+            <motion.div
+              ref={ticketRef}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              className="mt-12 max-w-sm mx-auto p-4 bg-white rounded-[40px] shadow-2xl overflow-hidden relative"
+            >
+              {/* Artistic Border/Frame */}
+              <div className="border-4 border-peach/20 rounded-[32px] p-8 flex flex-col items-center bg-[radial-gradient(circle_at_top_right,#fff5f0_0%,#ffffff_60%)]">
+                {/* Couple Header */}
+                <div className="space-y-1 mb-8">
+                  <h4 className="font-delphia text-3xl text-royal-blue leading-tight">
+                    Gaëlle & Joël
+                  </h4>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-8 h-[1px] bg-peach/30" />
+                    <span className="text-peach text-sm uppercase tracking-widest font-bold">
+                      25.04.2026
+                    </span>
+                    <div className="w-8 h-[1px] bg-peach/30" />
+                  </div>
                 </div>
-              </div>
 
-              {/* Guest Information */}
-              <div className="space-y-6 w-full py-8 border-y border-peach/10">
-                <div className="space-y-1">
-                  <p className="text-[10px] uppercase font-bold text-royal-blue/40 tracking-[0.3em]">
-                    Invité(e)
+                {/* Guest Information */}
+                <div className="space-y-6 w-full py-8 border-y border-peach/10">
+                  <div className="space-y-1">
+                    <p className="text-[10px] uppercase font-bold text-royal-blue/40 tracking-[0.3em]">
+                      Invité(e)
+                    </p>
+                    <p className="font-serif text-2xl text-royal-blue font-bold">
+                      {guest.prenom} {guest.nom}
+                    </p>
+                  </div>
+
+                  {/* Tables Details */}
+                  <div className="grid grid-cols-1 gap-4">
+                    {guest.groupes.includes("vh") && (
+                      <div className="bg-royal-blue/5 p-3 rounded-2xl border border-royal-blue/5">
+                        <p className="text-[9px] uppercase font-bold text-royal-blue/60 tracking-wider">
+                          Vin d'Honneur
+                        </p>
+                        <p className="text-royal-blue font-semibold">
+                          Table : {guest.tableVH || guest.table || "N/A"}
+                        </p>
+                      </div>
+                    )}
+                    {guest.groupes.includes("diner") && (
+                      <div className="bg-peach/5 p-3 rounded-2xl border border-peach/10">
+                        <p className="text-[9px] uppercase font-bold text-peach/80 tracking-wider">
+                          Gala Nuptial
+                        </p>
+                        <p className="text-royal-blue font-semibold">
+                          Table : {guest.tableDiner || guest.table || "N/A"}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="pt-8 flex flex-col items-center gap-4">
+                  <p className="text-[10px] uppercase tracking-[0.5em] text-royal-blue/30 font-bold">
+                    G & J • 2026
                   </p>
-                  <p className="font-serif text-2xl text-royal-blue font-bold">
-                    {guest.prenom} {guest.nom}
-                  </p>
                 </div>
 
-                {/* Tables Details */}
-                <div className="grid grid-cols-1 gap-4">
-                  {guest.groupes.includes("vh") && (
-                    <div className="bg-royal-blue/5 p-3 rounded-2xl border border-royal-blue/5">
-                      <p className="text-[9px] uppercase font-bold text-royal-blue/60 tracking-wider">
-                        Vin d'Honneur
-                      </p>
-                      <p className="text-royal-blue font-semibold">
-                        Table : {guest.tableVH || guest.table || "N/A"}
-                      </p>
-                    </div>
-                  )}
-                  {guest.groupes.includes("diner") && (
-                    <div className="bg-peach/5 p-3 rounded-2xl border border-peach/10">
-                      <p className="text-[9px] uppercase font-bold text-peach/80 tracking-wider">
-                        Gala Nuptial
-                      </p>
-                      <p className="text-royal-blue font-semibold">
-                        Table : {guest.tableDiner || guest.table || "N/A"}
-                      </p>
-                    </div>
-                  )}
-                </div>
+                {/* Background Decorations */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-peach/5 rounded-full blur-3xl -z-10" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-royal-blue/5 rounded-full blur-3xl -z-10" />
               </div>
+            </motion.div>
 
-              <div className="pt-8 flex flex-col items-center gap-4">
-                <p className="text-[10px] uppercase tracking-[0.5em] text-royal-blue/30 font-bold">
-                  G & J • 2026
-                </p>
-              </div>
-
-              {/* Background Decorations */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-peach/5 rounded-full blur-3xl -z-10" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-royal-blue/5 rounded-full blur-3xl -z-10" />
-            </div>
-          </motion.div>
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              onClick={downloadTicket}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-royal-blue text-white rounded-2xl font-bold shadow-xl hover:bg-royal-blue/90 transition-all active:scale-95 group"
+            >
+              <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+              <span>Télécharger mon billet</span>
+            </motion.button>
+          </div>
         )}
       </div>
     </Section>
