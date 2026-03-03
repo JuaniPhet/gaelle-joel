@@ -62,7 +62,7 @@ export default function Hero({ guest }: { guest: Guest }) {
             Bienvenue à notre mariage
           </p>
           <h1 className="font-serif text-3xl md:text-5xl text-royal-blue">
-            {guest.prenom}
+            {guest.prenom} {guest.nom}
           </h1>
         </div>
       </motion.div>
