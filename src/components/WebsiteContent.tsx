@@ -165,9 +165,10 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           <EventSection
             title="La Cérémonie Civile"
             time="09:00"
-            location="Happyness Garden"
+            location="Happyness Garden (Nyalla Kambo)"
             description="Dans ce cadre enchanteur, entouré de fleurs et de verdure, vous serez témoins du début d'une aventure éternelle."
             image="img/2.jpeg"
+            zoomInfo={{ id: "308 981 2058", password: "2020" }}
           />
         )}
 
@@ -179,6 +180,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             description="Nous nous y retrouverons pour la bénédiction nuptiale dans la sérénité et le respect."
             image="img/4.jpg"
             reversed
+            zoomInfo={{ id: "308 981 2058", password: "2020" }}
           />
         )}
 
