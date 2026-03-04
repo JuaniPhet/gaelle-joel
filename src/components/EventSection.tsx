@@ -8,7 +8,7 @@ interface EventSectionProps {
   title: string;
   time: string;
   location: string;
-  description: string;
+  description: string | string[];
   image: string;
   reversed?: boolean;
   footerText?: string;
@@ -37,7 +37,14 @@ export default function EventSection({
         )}
       >
         {/* Image with Organic/Ovale Mask */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+        {/* Image with Organic/Ovale Mask */}
+        <motion.div
+          initial={{ opacity: 0, x: reversed ? 60 : -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="w-full lg:w-1/2 flex flex-col gap-8"
+        >
           <div className="relative aspect-[4/4] rounded-[50px] overflow-hidden shadow-xl border border-peach/20 group">
             <img
               src={image}
@@ -49,17 +56,32 @@ export default function EventSection({
 
           {/* Mobile Zoom Box */}
           {zoomInfo && (
-            <div className="lg:hidden mt-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="lg:hidden mt-6"
+            >
               <ZoomBox id={zoomInfo.id} password={zoomInfo.password} />
-            </div>
+            </motion.div>
           )}
 
           {/* Mobile Footer (Under Image) */}
           <div className="relative lg:hidden text-center pt-8">
             {footerText && (
               <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay:
+                    1 +
+                    ((Array.isArray(description) ? description.length : 1) -
+                      1) *
+                      0.4,
+                }}
                 className="font-serif text-2xl text-royal-blue mb-8"
               >
                 {footerText}
@@ -68,12 +90,20 @@ export default function EventSection({
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 0.4, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay:
+                  1.2 +
+                  ((Array.isArray(description) ? description.length : 1) - 1) *
+                    0.4,
+              }}
               className="text-peach text-2xl inline-block"
             >
               ♥
             </motion.span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Text Content */}
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left px-4 relative">
@@ -81,6 +111,8 @@ export default function EventSection({
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.3 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 1.5 }}
             className="absolute -top-8 -right-4 text-2xl text-peach hidden lg:block"
           >
             {reversed ? "❀" : "♥"}
@@ -88,54 +120,85 @@ export default function EventSection({
 
           <div className="space-y-1">
             <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              animate={{
-                scale: [1, 1.05, 1],
-                textShadow: [
-                  "0 0 0px rgba(255, 176, 128, 0)",
-                  "0 0 10px rgba(255, 176, 128, 0.4)",
-                  "0 0 0px rgba(255, 176, 128, 0)",
-                ],
-              }}
-              transition={{
-                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                textShadow: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-                opacity: { duration: 0.8 },
-                x: { duration: 0.8 },
-              }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-peach font-sans font-bold text-2xl tracking-widest uppercase"
             >
               {time}
             </motion.p>
-            <h3 className="text-5xl md:text-6xl font-delphia text-royal-blue">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-5xl md:text-6xl font-delphia text-royal-blue"
+            >
               {title}
-            </h3>
-            <p className="text-royal-blue/60 font-sans">{location}</p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-royal-blue/60 font-sans"
+            >
+              {location}
+            </motion.p>
           </div>
 
-          <p className="text-foreground/80 leading-relaxed font-serif text-2xl">
-            {description}
-          </p>
+          <div className="space-y-4">
+            {(Array.isArray(description) ? description : [description]).map(
+              (line, i) => (
+                <motion.p
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.8 + i * 0.4 }}
+                  className="text-foreground/80 leading-relaxed font-serif text-2xl"
+                >
+                  {line}
+                </motion.p>
+              ),
+            )}
+          </div>
 
           {/* Desktop Zoom Box */}
           {zoomInfo && (
-            <div className="hidden lg:block pt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay:
+                  1.2 +
+                  ((Array.isArray(description) ? description.length : 1) - 1) *
+                    0.4,
+              }}
+              className="hidden lg:block pt-2"
+            >
               <ZoomBox id={zoomInfo.id} password={zoomInfo.password} />
-            </div>
+            </motion.div>
           )}
 
           {/* Desktop Footer (Inside text column) */}
           <div className="relative pt-8 hidden lg:block">
             {footerText && (
               <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay:
+                    1.4 +
+                    ((Array.isArray(description) ? description.length : 1) -
+                      1) *
+                      0.4,
+                }}
                 className="font-serif text-2xl text-royal-blue mb-10 text-center lg:text-left"
               >
                 {footerText}
@@ -144,6 +207,14 @@ export default function EventSection({
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 0.4, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay:
+                  1.6 +
+                  ((Array.isArray(description) ? description.length : 1) - 1) *
+                    0.4,
+              }}
               className="text-peach text-2xl inline-block lg:ml-0"
             >
               ♥

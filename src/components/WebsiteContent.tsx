@@ -145,13 +145,19 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
               </motion.p>
             </motion.div>
           </div>
-          <div className="max-w-3xl mx-auto rounded-[50px] overflow-hidden shadow-xl aspect-[4/5] lg:aspect-video">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 5 }}
+            className="max-w-3xl mx-auto rounded-[50px] overflow-hidden shadow-xl aspect-[4/5] lg:aspect-video"
+          >
             <img
               src="img/22.png"
               alt="Décoration florale"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -166,7 +172,11 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             title="La Cérémonie Civile"
             time="09:00"
             location="Happyness Garden (Nyalla Kambo)"
-            description="Dans ce cadre enchanteur, entouré de fleurs et de verdure, vous serez témoins du début d'une aventure éternelle."
+            description={[
+              "Dans ce cadre enchanteur,",
+              "entouré de fleurs et de verdure,",
+              "vous serez témoins du début d'une aventure éternelle.",
+            ]}
             image="img/2.jpeg"
             zoomInfo={{ id: "308 981 2058", password: "2020" }}
           />
@@ -200,7 +210,11 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             title="Le Gala Nuptial"
             time="18:30"
             location="Salle de fête de Rodann (après l'agence eneo Yassa)"
-            description="Les fleurs ont éclos, le jardin est en fête. L'amour est dans l'air et la musique est prête."
+            description={[
+              "Les fleurs ont éclos,",
+              "le jardin est en fête.",
+              "L'amour est dans l'air et la musique est prête.",
+            ]}
             image="img/3.png"
             footerText="Il ne manque plus que vous."
           />
