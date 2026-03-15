@@ -196,7 +196,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
 
         {guest.groupes.includes("vh") && (
           <EventSection
-            title="Le Vin d'Honneur"
+            title="Le Vin d 'Honneur"
             time="13:30"
             location="Happyness Garden (Nyalla Kambo)"
             description="Le jardin réouvrira à nouveau ses portes afin que nous partagions un moment convivial ensemble."
