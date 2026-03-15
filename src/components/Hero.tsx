@@ -68,7 +68,7 @@ export default function Hero({ guest }: { guest: Guest }) {
       </motion.div>
 
       {/* Modern Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
@@ -91,7 +91,7 @@ export default function Hero({ guest }: { guest: Guest }) {
             className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-royal-blue to-transparent"
           />
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

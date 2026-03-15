@@ -11,6 +11,7 @@ import Countdown from "./Countdown";
 import Footer from "./Footer";
 import { TablePlan, ThemeVestimentaire, Consignes } from "./MiscSections";
 import { motion } from "framer-motion";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function WebsiteContent({ guest }: { guest: Guest }) {
   const [showSite, setShowSite] = useState(false);
@@ -232,6 +233,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
 
         <Footer />
       </div>
+      <ScrollIndicator show={showSite} />
     </main>
   );
 }

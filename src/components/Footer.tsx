@@ -5,20 +5,20 @@ import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const { scrollYProgress } = useScroll();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
+    // On synchronise avec la disparition de l'autre bouton (90% du scroll)
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      if (latest > 0.9) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   const scrollToTop = () => {
     window.scrollTo({
