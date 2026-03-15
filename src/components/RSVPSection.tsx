@@ -56,7 +56,7 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
     messageContent += `\n---\n_Envoyé depuis le site de Gaëlle & Joël_`;
 
     const encodedText = encodeURIComponent(messageContent);
-    const phoneNumber = guest.contactSms || "237695098342";
+    const phoneNumber = guest.contactSms || "237696049817";
 
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
 
@@ -165,33 +165,35 @@ export default function RSVPSection({ guest }: { guest: Guest }) {
                       Invité(e)
                     </p>
                     <p className="font-serif text-2xl text-royal-blue font-bold">
-                      {guest.prenom} {guest.nom}
+                      {guest.slug === "general" ? "Invité(e)" : `${guest.prenom} ${guest.nom}`}
                     </p>
                   </div>
 
                   {/* Tables Details */}
-                  <div className="grid grid-cols-1 gap-4">
-                    {guest.groupes.includes("vh") && (
-                      <div className="bg-royal-blue/5 p-3 rounded-2xl border border-royal-blue/5">
-                        <p className="text-[9px] uppercase font-bold text-royal-blue/60 tracking-wider">
-                          Vin d'Honneur
-                        </p>
-                        <p className="text-royal-blue font-semibold">
-                          Table : {guest.tableVH || guest.table || "N/A"}
-                        </p>
-                      </div>
-                    )}
-                    {guest.groupes.includes("diner") && (
-                      <div className="bg-peach/5 p-3 rounded-2xl border border-peach/10">
-                        <p className="text-[9px] uppercase font-bold text-peach/80 tracking-wider">
-                          Gala Nuptial
-                        </p>
-                        <p className="text-royal-blue font-semibold">
-                          Table : {guest.tableDiner || guest.table || "N/A"}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                  {guest.slug !== "general" && (
+                    <div className="grid grid-cols-1 gap-4">
+                      {guest.groupes.includes("vh") && (
+                        <div className="bg-royal-blue/5 p-3 rounded-2xl border border-royal-blue/5">
+                          <p className="text-[9px] uppercase font-bold text-royal-blue/60 tracking-wider">
+                            Vin d'Honneur
+                          </p>
+                          <p className="text-royal-blue font-semibold">
+                            Table : {guest.tableVH || guest.table || "N/A"}
+                          </p>
+                        </div>
+                      )}
+                      {guest.groupes.includes("diner") && (
+                        <div className="bg-peach/5 p-3 rounded-2xl border border-peach/10">
+                          <p className="text-[9px] uppercase font-bold text-peach/80 tracking-wider">
+                            Gala Nuptial
+                          </p>
+                          <p className="text-royal-blue font-semibold">
+                            Table : {guest.tableDiner || guest.table || "N/A"}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-8 flex flex-col items-center gap-4">

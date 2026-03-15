@@ -1,7 +1,14 @@
-"use client";
-
-import { redirect } from "next/navigation";
+import WebsiteContent from "@/components/WebsiteContent";
+import { Guest } from "@/types";
 
 export default function Home() {
-  redirect("/gaelle-philomene");
+  const genericGuest: Guest = {
+    slug: "general",
+    prenom: "",
+    nom: "",
+    groupes: ["civil", "salle-royaume", "vh", "diner"],
+  };
+
+  return <WebsiteContent guest={genericGuest} />;
 }
+

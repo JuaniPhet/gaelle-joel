@@ -19,7 +19,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
     <main className="min-h-screen bg-background selection:bg-peach/30">
       {!showSite && (
         <Envelope
-          guestName={`${guest.prenom} ${guest.nom}`}
+          guestName={guest.slug === "general" ? "" : `${guest.prenom} ${guest.nom}`}
           onOpen={() => setShowSite(true)}
         />
       )}
@@ -220,7 +220,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           />
         )}
 
-        <TablePlan guest={guest} />
+        {guest.slug !== "general" && <TablePlan guest={guest} />}
 
         <Consignes />
 
