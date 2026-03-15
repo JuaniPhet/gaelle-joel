@@ -65,9 +65,9 @@ export function ThemeVestimentaire() {
           <h3 className="text-5xl md:text-6xl font-delphia text-royal-blue">
             Thème Vestimentaire
           </h3>
-          <p className="text-royal-blue/80 uppercase tracking-[0.1em] text-sm md:text-lg font-bold">
+          {/* <p className="text-royal-blue/80 uppercase tracking-[0.1em] text-sm md:text-lg font-bold">
             Du mur au jardin
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 px-4 justify-items-center">
@@ -110,7 +110,7 @@ export function ThemeVestimentaire() {
         </div>
 
         <p className="text-xl md:text-2xl font-serif text-royal-blue/80 px-8 max-w-2xl mx-auto leading-relaxed">
-          Nous serions ravis que vos tenues modestes s'inspirent de nos couleurs
+          Nous serons ravis que vos tenues modestes s'inspirent de nos couleurs
           afin de créer une harmonie visuelle lors de cette journée spéciale.
         </p>
       </div>
