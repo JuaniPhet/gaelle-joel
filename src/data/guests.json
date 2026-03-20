@@ -1056,5 +1056,499 @@
       "salle-royaume",
       "diner"
     ]
+  },
+  {
+    "slug": "couple-yomb-2",
+    "prenom": "COUPLE",
+    "nom": "YOMB 2",
+    "tableVH": "TOURNESOL",
+    "tableDiner": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "lydie-ngon",
+    "prenom": "Lydie",
+    "nom": "NGON",
+    "table": "TOURNESOL",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "evelyne-konlog",
+    "prenom": "Evelyne",
+    "nom": "KONLOG",
+    "table": "TOURNESOL",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "henri-likebel",
+    "prenom": "Henri",
+    "nom": "LIKEBEL",
+    "tableVH": "TOURNESOL",
+    "tableDiner": "",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "nadine-nonga",
+    "prenom": "Nadine",
+    "nom": "NONGA",
+    "tableVH": "TOURNESOL",
+    "tableDiner": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "nathan-nwaha-yomb",
+    "prenom": "Nathan",
+    "nom": "NWAHA YOMB",
+    "table": "TOURNESOL",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-nwaha-ndom",
+    "prenom": "COUPLE",
+    "nom": "NWAHA NDOM",
+    "tableVH": "BLEUET",
+    "tableDiner": "ROSE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-larrieu",
+    "prenom": "COUPLE",
+    "nom": "LARRIEU",
+    "tableVH": "BLEUET",
+    "tableDiner": "ROSE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-ndom-2",
+    "prenom": "COUPLE",
+    "nom": "NDOM 2",
+    "tableVH": "BLEUET",
+    "tableDiner": "ROSE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-nwet",
+    "prenom": "COUPLE",
+    "nom": "NWET",
+    "tableVH": "BLEUET",
+    "tableDiner": "ROSE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "aurelie-nwet",
+    "prenom": "Aurelie",
+    "nom": "NWET",
+    "tableVH": "BLEUET",
+    "tableDiner": "ROSE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "carole-toukong",
+    "prenom": "Carole",
+    "nom": "TOUKONG",
+    "table": "IRIS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "irene-fouda",
+    "prenom": "Irène",
+    "nom": "FOUDA",
+    "tableVH": "CROCUS",
+    "tableDiner": "TULIPE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-modo",
+    "prenom": "COUPLE",
+    "nom": "MODO",
+    "tableVH": "CROCUS",
+    "tableDiner": "TULIPE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "beatrice-mbessa",
+    "prenom": "Béatrice",
+    "nom": "MBESSA",
+    "tableVH": "CROCUS",
+    "tableDiner": "TULIPE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "beatrice-ndzie",
+    "prenom": "Béatrice",
+    "nom": "Ndzié",
+    "tableVH": "CROCUS",
+    "tableDiner": "TULIPE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-kongo",
+    "prenom": "COUPLE",
+    "nom": "KONGO",
+    "table": "CROCUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "amie-minkada",
+    "prenom": "AMIE",
+    "nom": "MINKADA",
+    "tableVH": "CROCUS",
+    "tableDiner": "TULIPE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-sap",
+    "prenom": "COUPLE",
+    "nom": "SAP",
+    "tableVH": "ASTER",
+    "tableDiner": "MARGUERITE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-ndom-1",
+    "prenom": "COUPLE",
+    "nom": "NDOM 1",
+    "tableVH": "BLEUET",
+    "tableDiner": "MARGUERITE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-yomb-1",
+    "prenom": "COUPLE",
+    "nom": "YOMB 1",
+    "table": "CAMELIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-oum",
+    "prenom": "COUPLE",
+    "nom": "OUM",
+    "tableVH": "CAMELIA",
+    "tableDiner": "MARGUERITE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "debora-ngo-oum",
+    "prenom": "Débora",
+    "nom": "NGO OUM",
+    "table": "CAMELIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-mimb",
+    "prenom": "COUPLE",
+    "nom": "MIMB",
+    "tableVH": "ASTER",
+    "tableDiner": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-bayong",
+    "prenom": "COUPLE",
+    "nom": "BAYONG",
+    "tableVH": "ASTER",
+    "tableDiner": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-fometeh",
+    "prenom": "COUPLE",
+    "nom": "FOMETEH",
+    "table": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "mispador-ngo-ndom",
+    "prenom": "Mispador",
+    "nom": "NGO NDOM",
+    "table": "CAMELIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "victor-nyemeck-ndom",
+    "prenom": "Victor",
+    "nom": "NYEMECK NDOM",
+    "table": "CAMELIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-fouda",
+    "prenom": "COUPLE",
+    "nom": "FOUDA",
+    "tableVH": "ASTER",
+    "tableDiner": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-boresse",
+    "prenom": "COUPLE",
+    "nom": "BORESSE",
+    "tableVH": "ROSE",
+    "tableDiner": "HORTENSIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-ndjehemle",
+    "prenom": "COUPLE",
+    "nom": "NDJEHEMLE",
+    "tableVH": "ROSE",
+    "tableDiner": "HORTENSIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-nguea",
+    "prenom": "COUPLE",
+    "nom": "NGUEA",
+    "tableVH": "ROSE",
+    "tableDiner": "HORTENSIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-andogme",
+    "prenom": "COUPLE",
+    "nom": "ANDOGME",
+    "tableVH": "ROSE",
+    "tableDiner": "HORTENSIA",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "urie-ndip",
+    "prenom": "Urie",
+    "nom": "NDIP",
+    "tableVH": "ROSE",
+    "tableDiner": "JASMINE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "suzanne-keubing",
+    "prenom": "Suzanne",
+    "nom": "KEUBING",
+    "tableVH": "ROSE",
+    "tableDiner": "JASMINE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-chatie",
+    "prenom": "COUPLE",
+    "nom": "CHATIE",
+    "table": "LYS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-kuetche",
+    "prenom": "COUPLE",
+    "nom": "KUETCHE",
+    "table": "LYS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
   }
 ]
