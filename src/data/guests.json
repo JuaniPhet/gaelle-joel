@@ -2769,5 +2769,235 @@
       "salle-royaume",
       "vh"
     ]
+  },
+  {
+    "slug": "maman-marie-patricia",
+    "prenom": "",
+    "nom": "Maman Marie & Patricia",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-mouchigan",
+    "prenom": "COUPLE",
+    "nom": "MOUCHIGAN",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "jonathan-dague",
+    "prenom": "Jonathan",
+    "nom": "Dague",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "rachel-djonken",
+    "prenom": "Rachel",
+    "nom": "Djonken",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "priscille-dawa",
+    "prenom": "Priscille",
+    "nom": "Dawa",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "amery-manick",
+    "prenom": "Amery",
+    "nom": "Manick",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "lydie-ngnie",
+    "prenom": "Lydie",
+    "nom": "Ngnie",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "sandra-fossua",
+    "prenom": "Sandra",
+    "nom": "Fossua",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "lise-dakam",
+    "prenom": "Lise",
+    "nom": "DAKAM",
+    "table": "LOTUS",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "couple-etoubou",
+    "prenom": "COUPLE",
+    "nom": "ETOUBOU",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "sysestabelle-ngnidze",
+    "prenom": "Sysestabelle",
+    "nom": "Ngnidze",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "mikal-minkonda",
+    "prenom": "Mikal",
+    "nom": "Minkonda",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "yoel-njoh",
+    "prenom": "Yoel",
+    "nom": "Njoh",
+    "tableVH": "ORCHIDEE",
+    "tableDiner": "JASMINE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "ruth-nana",
+    "prenom": "Ruth",
+    "nom": "Nana",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "franche-ndongho",
+    "prenom": "Franche",
+    "nom": "Ndongho",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "naomie-minkoda",
+    "prenom": "Naomie",
+    "nom": "Minkoda",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "lyncee-djana",
+    "prenom": "Lyncée",
+    "nom": "Djana",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "abigael-dimo",
+    "prenom": "Abigael",
+    "nom": "Dimo",
+    "table": "ORCHIDEE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "miriam-mewa",
+    "prenom": "Miriam",
+    "nom": "Mewa",
+    "table": "JASMINE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
   }
 ]
