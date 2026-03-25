@@ -189,7 +189,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             time="12:30"
             location="Salle du Royaume (Kambo-Pariso)"
             description="Nous nous y retrouverons pour la bénédiction nuptiale dans la sérénité et le respect."
-            image="img/4.jpg"
+            image="img/44.png"
             reversed
             zoomInfo={{ id: "308 981 2058", password: "2020" }}
           />
