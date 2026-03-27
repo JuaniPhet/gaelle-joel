@@ -3298,5 +3298,225 @@
       "vh",
       "diner"
     ]
+  },
+  {
+    "slug": "couple-mwi",
+    "prenom": "Couple",
+    "nom": "MWI",
+    "table": "CAMELIA",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "nicole",
+    "prenom": "Nicole",
+    "nom": "",
+    "tableVH": "MUGET",
+    "tableDiner": "ACHILÉE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "therese-becke",
+    "prenom": "Thérèse",
+    "nom": "BECKE",
+    "table": "MUGET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "odile",
+    "prenom": "Odile",
+    "nom": "",
+    "table": "MUGET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "tantine-ebissouguie",
+    "prenom": "Tantine",
+    "nom": "EBISSOUGUIÉ",
+    "table": "OILLET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "tantine-celestine",
+    "prenom": "Tantine",
+    "nom": "CELESTINE",
+    "table": "OILLET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "prisca",
+    "prenom": "Prisca",
+    "nom": "",
+    "table": "TUPILE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "priscille",
+    "prenom": "Priscille",
+    "nom": "",
+    "table": "TUPILE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "mary-bilongo",
+    "prenom": "Mary",
+    "nom": "BILONGO",
+    "table": "JACINTHE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "mama-esther",
+    "prenom": "Mama",
+    "nom": "ESTHER",
+    "table": "JACINTHE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "fabrice",
+    "prenom": "Fabrice",
+    "nom": "",
+    "table": "OILLET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "charlotte",
+    "prenom": "Charlotte",
+    "nom": "",
+    "table": "OILLET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "caroline",
+    "prenom": "Caroline",
+    "nom": "",
+    "table": "OILLET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "claire",
+    "prenom": "Claire",
+    "nom": "",
+    "tableVH": "OILLET",
+    "tableDiner": "ACHILÉE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "elise",
+    "prenom": "Elise",
+    "nom": "",
+    "table": "COQUELICOT",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "stella",
+    "prenom": "Stella",
+    "nom": "",
+    "table": "MUGET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "alliance",
+    "prenom": "Alliance",
+    "nom": "",
+    "table": "MUGET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "herveline",
+    "prenom": "Herveline",
+    "nom": "",
+    "table": "MUGET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
   }
 ]
