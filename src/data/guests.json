@@ -1260,8 +1260,8 @@
     ]
   },
   {
-    "slug": "beatrice-ndzie",
-    "prenom": "Béatrice",
+    "slug": "yolande-ndzie",
+    "prenom": "Yolande",
     "nom": "Ndzié",
     "tableVH": "CROCUS",
     "tableDiner": "TULIPE",
@@ -1282,12 +1282,13 @@
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh"
+      "vh",
+      "diner"
     ]
   },
   {
-    "slug": "amie-minkada",
-    "prenom": "AMIE",
+    "slug": "marie-minkada",
+    "prenom": "Marie",
     "nom": "MINKADA",
     "tableVH": "CROCUS",
     "tableDiner": "TULIPE",
