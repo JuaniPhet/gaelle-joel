@@ -164,7 +164,7 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="mt-10 bg-white/40 backdrop-blur-3xl py-6 px-6 rounded-full border border-peach/20 shadow-sm inline-flex items-center gap-3 mx-auto group hover:bg-white/50 transition-all duration-500"
+            className="mt-10 bg-white/40 backdrop-blur-3xl py-5 px-5 rounded-full border border-peach/20 shadow-sm inline-flex items-center gap-3 mx-auto group hover:bg-white/50 transition-all duration-500"
           >
             <div className="flex flex-col items-center">
               <span className="text-royal-blue/40 text-[10px] uppercase font-bold tracking-[0.4em] mb-1 leading-none">
