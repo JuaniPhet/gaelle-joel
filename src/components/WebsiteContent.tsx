@@ -155,9 +155,32 @@ export default function WebsiteContent({ guest }: { guest: Guest }) {
           >
             <img
               src="img/22.png"
-              alt="Décoration florale"
+              alt="Gaelle & Joel"
               className="w-full h-full object-cover"
             />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.5 }}
+            className="mt-10 bg-white/40 backdrop-blur-3xl py-6 px-6 rounded-full border border-peach/20 shadow-sm inline-flex items-center gap-3 mx-auto group hover:bg-white/50 transition-all duration-500"
+          >
+            <div className="flex flex-col items-center">
+              <span className="text-royal-blue/40 text-[10px] uppercase font-bold tracking-[0.4em] mb-1 leading-none">
+                Thème du Mariage
+              </span>
+              <span className="text-royal-blue font-serif text-2xl lg:text-3xl italic tracking-wide">
+                « Du Mur au Jardin »
+              </span>
+            </div>
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="text-peach text-2xl opacity-60 group-hover:opacity-100 transition-opacity"
+            >
+              ❀
+            </motion.span>
           </motion.div>
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
