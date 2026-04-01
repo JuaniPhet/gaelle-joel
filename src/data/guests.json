@@ -1382,8 +1382,22 @@
     ]
   },
   {
-    "slug": "couple-mimb",
-    "prenom": "COUPLE",
+    "slug": "celine-etoga",
+    "prenom": "Céline",
+    "nom": "ETOGA",
+    "tableVH": "ASTER",
+    "tableDiner": "ASTER",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "simon-mimb",
+    "prenom": "Simon",
     "nom": "MIMB",
     "tableVH": "ASTER",
     "tableDiner": "ASTER",
@@ -1616,15 +1630,15 @@
     ]
   },
   {
-    "slug": "gerard-njopnang",
-    "prenom": "Gerard",
+    "slug": "mr-gerard-njopnang",
+    "prenom": "Mr Gerard",
     "nom": "NJOPNANG",
-    "table": "MARGUERITE",
+    "table": "BLEUET",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh"
+      "diner"
     ]
   },
   {
@@ -1640,8 +1654,8 @@
     ]
   },
   {
-    "slug": "landry-badjeck",
-    "prenom": "Landry",
+    "slug": "dr-landry-badjeck",
+    "prenom": "Dr Landry",
     "nom": "BADJECK",
     "table": "MARGUERITE",
     "contactSms": "237691605767",
@@ -2628,12 +2642,14 @@
     "slug": "couple-noubissi",
     "prenom": "COUPLE",
     "nom": "NOUBISSI",
-    "table": "ACHILLE",
+    "tableVH": "ACHILLE",
+    "tableDiner": "MARGUERITE",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh"
+      "vh",
+      "diner"
     ]
   },
   {
@@ -4036,6 +4052,56 @@
     "slug": "aboubakar-njikam",
     "prenom": "Aboubakar",
     "nom": "NJIKAM",
+    "tableVH": "JASMINE",
+    "tableDiner": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "fleury-bolla",
+    "prenom": "Fleury",
+    "nom": "BOLLA",
+    "table": "JASMINE",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "mr-soussia",
+    "prenom": "Mr",
+    "nom": "SOUSSIA",
+    "table": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "mr-luc-loga",
+    "prenom": "Mr Luc",
+    "nom": "LOGA",
+    "table": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "mr-bello",
+    "prenom": "Mr",
+    "nom": "BELLO",
     "table": "BLEUET",
     "contactSms": "237691605767",
     "groupes": [
