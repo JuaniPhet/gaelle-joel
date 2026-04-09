@@ -4230,5 +4230,225 @@
       "vh",
       "diner"
     ]
+  },
+  {
+    "slug": "marie-ange",
+    "prenom": "Marie Ange",
+    "nom": "",
+    "table": "AGAPANTHE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "joel-ngouda",
+    "prenom": "Joël",
+    "nom": "NGOUDA",
+    "table": "ANTHURIUM",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "gertrude-zib",
+    "prenom": "Gertrude",
+    "nom": "ZIB",
+    "table": "CAMELIA",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "rufin-ewolo",
+    "prenom": "Rufin",
+    "nom": "EWOLO",
+    "table": "CROCUS",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "stella-miyoupou",
+    "prenom": "Stella",
+    "nom": "MIYOUPOU",
+    "table": "HIBISCUS",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-whaffo",
+    "prenom": "COUPLE",
+    "nom": "WHAFFO",
+    "table": "CAMELIA",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "eunice",
+    "prenom": "Eunice",
+    "nom": "",
+    "table": "ORCHIDEE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "chimene",
+    "prenom": "Chimene",
+    "nom": "",
+    "table": "ANEMONE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "alliance",
+    "prenom": "Alliance",
+    "nom": "",
+    "table": "COQUELICOT",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "nathanael",
+    "prenom": "Nathanaël",
+    "nom": "",
+    "table": "BLEUET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "dariol",
+    "prenom": "Dariol",
+    "nom": "",
+    "table": "COQUELICOT",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "chritian",
+    "prenom": "Chritian",
+    "nom": "",
+    "table": "LAVANDE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "caleb",
+    "prenom": "Caleb",
+    "nom": "",
+    "table": "TOURNESOL",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-kemeugne",
+    "prenom": "COUPLE",
+    "nom": "KEMEUGNE",
+    "table": "ACACIA",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "chimene-2",
+    "prenom": "Chimène",
+    "nom": "",
+    "table": "ANEMONE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-bella",
+    "prenom": "COUPLE",
+    "nom": "BELLA",
+    "table": "ANEMONE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-gououi",
+    "prenom": "COUPLE",
+    "nom": "GOUOUI",
+    "tableVH": "MIMOSA",
+    "tableDiner": "ANEMONE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
+    "slug": "couple-natanzem",
+    "prenom": "COUPLE",
+    "nom": "NATANZEM",
+    "tableVH": "HIBISCUS",
+    "tableDiner": "ANEMONE",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
   }
 ]
