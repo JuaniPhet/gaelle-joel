@@ -55,7 +55,7 @@
     "slug": "aristide",
     "prenom": "Aristide",
     "nom": "",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -154,7 +154,7 @@
     "slug": "marie-dekanda",
     "prenom": "Marie",
     "nom": "Dekanda",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -398,7 +398,7 @@
     "slug": "couple-kembeung",
     "prenom": "Couple",
     "nom": "Kembeung",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -762,7 +762,7 @@
     "slug": "couple-takoue",
     "prenom": "Couple",
     "nom": "Takoue",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -834,7 +834,7 @@
     "slug": "couple-temgoua",
     "prenom": "Couple",
     "nom": "Temgoua",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -2382,7 +2382,7 @@
     "prenom": "COUPLE",
     "nom": "MESSANGA",
     "tableVH": "VIOLETTE",
-    "tableDiner": "POVOINE",
+    "tableDiner": "PIVOINE",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -2529,7 +2529,7 @@
     "slug": "couple-neubiap",
     "prenom": "COUPLE",
     "nom": "NEUBIAP",
-    "table": "ACHILLE",
+    "table": "ACHILLÉE",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -2541,7 +2541,7 @@
     "slug": "flore-njamen",
     "prenom": "Flore",
     "nom": "Njamen",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "JASMINE",
     "contactSms": "237691605767",
     "groupes": [
@@ -2555,7 +2555,7 @@
     "slug": "couple-noubissi",
     "prenom": "COUPLE",
     "nom": "NOUBISSI",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "MARGUERITE",
     "contactSms": "237691605767",
     "groupes": [
@@ -2569,7 +2569,7 @@
     "slug": "edwige-pehipe",
     "prenom": "Edwige",
     "nom": "Pehipe",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "JASMINE",
     "contactSms": "237691605767",
     "groupes": [
@@ -2583,7 +2583,7 @@
     "slug": "brigitte-seumo",
     "prenom": "Brigitte",
     "nom": "Seumo",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "JASMINE",
     "contactSms": "237691605767",
     "groupes": [
@@ -2597,7 +2597,7 @@
     "slug": "couple-ngnidze",
     "prenom": "COUPLE",
     "nom": "NGNIDZE",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "PIVOINE",
     "contactSms": "237691605767",
     "groupes": [
@@ -2611,7 +2611,7 @@
     "slug": "georgette-mintamag",
     "prenom": "Georgette",
     "nom": "Mintamag",
-    "tableVH": "ACHILLE",
+    "tableVH": "ACHILLÉE",
     "tableDiner": "IRIS",
     "contactSms": "237691605767",
     "groupes": [
@@ -2625,7 +2625,7 @@
     "slug": "couple-zebaze",
     "prenom": "COUPLE",
     "nom": "ZEBAZE",
-    "table": "ACHILLE",
+    "table": "ACHILLÉE",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -3265,7 +3265,7 @@
     "slug": "couple-mode",
     "prenom": "COUPLE",
     "nom": "MODE",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3277,7 +3277,7 @@
     "slug": "couple-tang",
     "prenom": "COUPLE",
     "nom": "TANG",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3313,8 +3313,8 @@
     "slug": "couple-adigana",
     "prenom": "COUPLE",
     "nom": "ADIGANA",
-    "tableVH": "MUGET",
-    "tableDiner": "ACHILÉE",
+    "tableVH": "MUGUET",
+    "tableDiner": "ACHILLÉE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3339,8 +3339,8 @@
     "slug": "nicole",
     "prenom": "Nicole",
     "nom": "",
-    "tableVH": "MUGET",
-    "tableDiner": "ACHILÉE",
+    "tableVH": "MUGUET",
+    "tableDiner": "ACHILLÉE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3353,7 +3353,7 @@
     "slug": "therese-becke",
     "prenom": "Thérèse",
     "nom": "BECKE",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3365,7 +3365,7 @@
     "slug": "odile",
     "prenom": "Odile",
     "nom": "",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3401,7 +3401,7 @@
     "slug": "prisca",
     "prenom": "Prisca",
     "nom": "",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3413,7 +3413,7 @@
     "slug": "priscille",
     "prenom": "Priscille",
     "nom": "",
-    "table": "TUPILE",
+    "table": "TULIPE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3486,7 +3486,7 @@
     "prenom": "Claire",
     "nom": "",
     "tableVH": "OILLET",
-    "tableDiner": "ACHILÉE",
+    "tableDiner": "ACHILLÉE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3511,7 +3511,7 @@
     "slug": "stella",
     "prenom": "Stella",
     "nom": "",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3523,7 +3523,7 @@
     "slug": "herveline",
     "prenom": "Herveline",
     "nom": "",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3749,7 +3749,7 @@
     "slug": "couple-wafo",
     "prenom": "COUPLE",
     "nom": "WAFO",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -3761,7 +3761,7 @@
     "slug": "couple-emaleu",
     "prenom": "COUPLE",
     "nom": "EMALEU",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -3773,7 +3773,7 @@
     "slug": "couple-moueldjock",
     "prenom": "COUPLE",
     "nom": "MOUELDJOCK",
-    "table": "MUGET",
+    "table": "MUGUET",
     "contactSms": "237691605767",
     "groupes": [
       "civil",
@@ -4419,7 +4419,8 @@
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh"
+      "vh",
+      "diner"
     ]
   },
   {
