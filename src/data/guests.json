@@ -305,18 +305,6 @@
     ]
   },
   {
-    "slug": "triphene-eyezock",
-    "prenom": "Triphene",
-    "nom": "Eyezock",
-    "table": "CAMELIA",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
     "slug": "couple-fandio",
     "prenom": "Couple",
     "nom": "Fandio",
@@ -327,30 +315,6 @@
       "civil",
       "salle-royaume",
       "vh",
-      "diner"
-    ]
-  },
-  {
-    "slug": "couple-fangoue",
-    "prenom": "Couple",
-    "nom": "Fangoue",
-    "table": "COQUELICOT",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
-    "slug": "christerbel-focho",
-    "prenom": "Christerbel",
-    "nom": "Focho",
-    "table": "ACACIA",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
       "diner"
     ]
   },
@@ -431,18 +395,6 @@
     ]
   },
   {
-    "slug": "louis-marie-kebaweu",
-    "prenom": "Louis Marie",
-    "nom": "Kebaweu",
-    "table": "CAMELIA",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
     "slug": "couple-kembeung",
     "prenom": "Couple",
     "nom": "Kembeung",
@@ -489,20 +441,6 @@
     "groupes": [
       "civil",
       "salle-royaume",
-      "diner"
-    ]
-  },
-  {
-    "slug": "couple-kingson",
-    "prenom": "Couple",
-    "nom": "Kingson",
-    "tableVH": "OILLET",
-    "tableDiner": "COQUELICOT",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh",
       "diner"
     ]
   },
@@ -757,34 +695,10 @@
     ]
   },
   {
-    "slug": "couple-ngouda",
-    "prenom": "Couple",
-    "nom": "Ngouda",
-    "table": "ANTHURIUM",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
     "slug": "couple-nguelefack",
     "prenom": "Couple",
     "nom": "Nguelefack",
     "table": "MIMOSA",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh"
-    ]
-  },
-  {
-    "slug": "vanelle-nkamdoum",
-    "prenom": "Vanelle",
-    "nom": "Nkamdoum",
-    "table": "TUPILE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -845,18 +759,6 @@
     ]
   },
   {
-    "slug": "hornelle-sani",
-    "prenom": "Hornelle",
-    "nom": "Sani",
-    "table": "TUPILE",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh"
-    ]
-  },
-  {
     "slug": "couple-sop",
     "prenom": "Couple",
     "nom": "Sop",
@@ -909,18 +811,6 @@
     "prenom": "Couple",
     "nom": "Tappa",
     "table": "COQUELICOT",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
-    "slug": "couple-tassimo",
-    "prenom": "Couple",
-    "nom": "Tassimo",
-    "table": "LAVANDE",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -1022,20 +912,6 @@
     "nom": "Yumga",
     "tableVH": "ACACIA",
     "tableDiner": "AGAPANTHE",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh",
-      "diner"
-    ]
-  },
-  {
-    "slug": "couple-zib",
-    "prenom": "Couple",
-    "nom": "Zib",
-    "tableVH": "ACACIA",
-    "tableDiner": "CAMELIA",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
@@ -3425,18 +3301,6 @@
     "slug": "couple-tang",
     "prenom": "COUPLE",
     "nom": "TANG",
-    "table": "MUGET",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh"
-    ]
-  },
-  {
-    "slug": "elise",
-    "prenom": "ELISE",
-    "nom": "",
     "table": "MUGET",
     "contactSms": "237696049817",
     "groupes": [
