@@ -31,3 +31,11 @@ Chaque invité doit être un objet dans ce format :
   "contactSms": "237691605767",
   "groupes": ["civil", "salle-royaume", "vh", "diner"]
 }
+
+## 4. Liens
+Les liens générés doivent être envoyés dans le chat sous la forme : https://gaelle-joel.vercel.app/slug
+
+
+## 5. Exemples
+
+- Joël Hyacinthe : https://gaelle-joel.vercel.app/joel-hyacinthe
