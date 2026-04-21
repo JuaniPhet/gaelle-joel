@@ -543,18 +543,6 @@
     ]
   },
   {
-    "slug": "couple-mbimbe",
-    "prenom": "Couple",
-    "nom": "Mbimbe",
-    "table": "BLEUET",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
     "slug": "louis-abel-mengue",
     "prenom": "Louis Abel",
     "nom": "Mengue",
@@ -3506,6 +3494,18 @@
     ]
   },
   {
+    "slug": "elise",
+    "prenom": "Elise",
+    "nom": "",
+    "table": "MUGUET",
+    "contactSms": "237696049817",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
     "slug": "claire",
     "prenom": "Claire",
     "nom": "",
@@ -4447,7 +4447,8 @@
     "slug": "couple-mbimbe",
     "prenom": "COUPLE",
     "nom": "MBIMBE",
-    "table": "ACACIA",
+    "tableVH": "ACACIA",
+    "tableDiner": "BLEUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
