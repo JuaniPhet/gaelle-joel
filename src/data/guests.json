@@ -4197,14 +4197,12 @@
     "slug": "alliance",
     "prenom": "Alliance",
     "nom": "",
-    "tableVH": "MUGUET",
-    "tableDiner": "COQUELICOT",
+    "table": "MUGUET",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh",
-      "diner"
+      "vh"
     ]
   },
   {
