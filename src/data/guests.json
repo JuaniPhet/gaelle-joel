@@ -909,18 +909,6 @@
     ]
   },
   {
-    "slug": "couple-zintchem",
-    "prenom": "Couple",
-    "nom": "Zintchem",
-    "table": "TOURNESOL",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "diner"
-    ]
-  },
-  {
     "slug": "audrey",
     "prenom": "Audrey",
     "nom": "",
@@ -4438,12 +4426,14 @@
     "slug": "couple-zintchem",
     "prenom": "COUPLE",
     "nom": "ZINTCHEM",
-    "table": "ACACIA",
+    "tableVH": "ACACIA",
+    "tableDiner": "TOURNESOL",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
       "salle-royaume",
-      "vh"
+      "vh",
+      "diner"
     ]
   },
   {
