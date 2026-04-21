@@ -3532,18 +3532,6 @@
     ]
   },
   {
-    "slug": "alliance",
-    "prenom": "Alliance",
-    "nom": "",
-    "table": "MUGET",
-    "contactSms": "237696049817",
-    "groupes": [
-      "civil",
-      "salle-royaume",
-      "vh"
-    ]
-  },
-  {
     "slug": "herveline",
     "prenom": "Herveline",
     "nom": "",
@@ -4221,11 +4209,13 @@
     "slug": "alliance",
     "prenom": "Alliance",
     "nom": "",
-    "table": "COQUELICOT",
+    "tableVH": "MUGUET",
+    "tableDiner": "COQUELICOT",
     "contactSms": "237696049817",
     "groupes": [
       "civil",
       "salle-royaume",
+      "vh",
       "diner"
     ]
   },
