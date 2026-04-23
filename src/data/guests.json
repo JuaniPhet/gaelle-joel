@@ -1063,6 +1063,32 @@
     ]
   },
   {
+    "slug": "franck-fotso",
+    "prenom": "Franck",
+    "nom": "FOTSO",
+    "table": "RAISIN",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh"
+    ]
+  },
+  {
+    "slug": "jemimah-tchouwa",
+    "prenom": "Jemimah",
+    "nom": "TCHOUWA",
+    "tableVH": "RAISIN",
+    "tableDiner": "RAISIN",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "vh",
+      "diner"
+    ]
+  },
+  {
     "slug": "couple-ndom-2",
     "prenom": "COUPLE",
     "nom": "NDOM 2",
