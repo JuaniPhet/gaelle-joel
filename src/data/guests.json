@@ -1039,6 +1039,30 @@
     ]
   },
   {
+    "slug": "vincent-ambiana",
+    "prenom": "Vincent",
+    "nom": "AMBIANA",
+    "table": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
+    "slug": "lionnel-doume",
+    "prenom": "Lionnel",
+    "nom": "DOUME",
+    "table": "BLEUET",
+    "contactSms": "237691605767",
+    "groupes": [
+      "civil",
+      "salle-royaume",
+      "diner"
+    ]
+  },
+  {
     "slug": "couple-ndom-2",
     "prenom": "COUPLE",
     "nom": "NDOM 2",
